@@ -11,7 +11,10 @@ import java.util.Map;
 class SongRecSys {
     private RecSys recsys;
 
-    SongRecSys(String method) throws Exception {
+    private Distance distance;
+
+    SongRecSys(String method, Distance distance) throws Exception {
+        this.distance = distance;
         String sep = System.getProperty("file.separator");
         String ruta = "src/main/java/es/uji/al415634/Files";
 
@@ -24,8 +27,9 @@ class SongRecSys {
 
         // Algorithms
         Map<String,Algorithm> algorithms = new HashMap<>();
-        algorithms.put("knn",new KNN());
-        algorithms.put("kmeans",new KMeans(15, 200, 4321));
+
+        algorithms.put("knn",new KNN(distance));
+        algorithms.put("kmeans",new KMeans(15, 200, 4321, distance));
 
         // Tables
         Map<String,Table> tables = new HashMap<>();
@@ -73,7 +77,9 @@ class SongRecSys {
     }
 
     public static void main(String[] args) throws Exception {
-        new SongRecSys("knn");
-        new SongRecSys("kmeans");
+        new SongRecSys("knn", new EuclideanDistance());
+        new SongRecSys("kmeans", new EuclideanDistance());
+        new SongRecSys("knn", new ManhattanDistance());
+        new SongRecSys("kmeans", new ManhattanDistance());
     }
 }

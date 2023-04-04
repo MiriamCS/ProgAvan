@@ -20,6 +20,8 @@ class KMeansTest {
     List<Double> puntoPruebas = new ArrayList<>(3);
     List<Double> puntoEstimate = new ArrayList<>(3);
 
+    Distance distance = new EuclideanDistance();
+
     KMeansTest() throws IOException {
     }
 
@@ -37,35 +39,44 @@ class KMeansTest {
     @Test
     void train() {
         //prueba 1: debe lanzar excepcion
-        KMeans kmeans = new KMeans(13,4,415634);
+        KMeans kmeans = new KMeans(13,4,415634, distance);
         assertThrows(IndexOutOfBoundsException.class, ()-> kmeans.train(tabla1));
         //prueba 1: no debe lanzar excepcion
-        KMeans kmeans1 = new KMeans(3,4,415634);
+        KMeans kmeans1 = new KMeans(3,4,415634, distance);
         kmeans1.train(tabla1);
         assertEquals(3,kmeans1.repre.size());
 
         //prueba 2: debe lanzar excepcion
-        KMeans kmeans2 = new KMeans(12, 2, 415634);
+        KMeans kmeans2 = new KMeans(12, 2, 415634, distance);
         assertThrows(IndexOutOfBoundsException.class, ()-> kmeans2.train(tabla2));
         //prueba2: no sebe lanzar excepcion
-        KMeans kmeans3 = new KMeans(2,4,415634);
+        KMeans kmeans3 = new KMeans(2,4,415634, distance);
         kmeans3.train(tabla2);
         assertEquals(2,kmeans3.repre.size());
     }
 
     @Test
     void estimate() {
-        KMeans kmeans = new KMeans(2, 2, 415634);
-        kmeans.train(tabla1);
+        Distance d_eucl = new EuclideanDistance();
+        KMeans kmeans_eucl = new KMeans(2, 2, 415634, d_eucl);
+        kmeans_eucl.train(tabla1);
 
-        assertEquals(puntoEstimate, tabla1.listaRows.get(kmeans.estimate(puntoPruebas)).getData());
+        assertEquals(puntoEstimate, tabla1.listaRows.get(kmeans_eucl.estimate(puntoPruebas)).getData());
+
+        Distance d_manh = new ManhattanDistance();
+        KMeans kmeans_manh = new KMeans(2, 2, 415634, d_manh);
+        kmeans_manh.train(tabla1);
+
+        assertEquals(puntoEstimate, tabla1.listaRows.get(kmeans_manh.estimate(puntoPruebas)).getData());
+
+
     }
 
     @Test
     void asignar() {
         //prueba 1
         Integer[] solucionPrueba1 = {0, 2, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1};
-        KMeans kmeans = new KMeans(3,4,415634);
+        KMeans kmeans = new KMeans(3,4,415634, distance);
         kmeans.train(tabla1);
         List<Integer> aux = kmeans.asignar();
         for(int i=0; i < aux.size(); i++){
@@ -73,7 +84,7 @@ class KMeansTest {
         }
         //prueba 2
         Integer[] solucionPrueba2 = {0, 0, 0, 1, 1, 0, 2, 2, 1, 0, 0};
-        KMeans kmeans1 = new KMeans(3,4,415634);
+        KMeans kmeans1 = new KMeans(3,4,415634, distance);
         kmeans1.train(tabla2);
         List<Integer> aux1 = kmeans1.asignar();
         for(int i=0; i < aux1.size(); i++){
@@ -100,7 +111,7 @@ class KMeansTest {
         solucionPrueba1.add(c2);
         solucionPrueba1.add(c3);
 
-        KMeans kmeans = new KMeans(3, 4, 415634);
+        KMeans kmeans = new KMeans(3, 4, 415634, distance);
         kmeans.train(tabla1);
         List<List<Double>> aux = kmeans.nuevosCentroides(kmeans.asignar());
         int i=0;
@@ -131,7 +142,7 @@ class KMeansTest {
         solucionPrueba2.add(d2);
         solucionPrueba2.add(d3);
 
-        KMeans kmeans1 = new KMeans(3, 4, 415634);
+        KMeans kmeans1 = new KMeans(3, 4, 415634, distance);
         kmeans1.train(tabla2);
         List<List<Double>> aux1 = kmeans1.nuevosCentroides(kmeans1.asignar());
         i=0;

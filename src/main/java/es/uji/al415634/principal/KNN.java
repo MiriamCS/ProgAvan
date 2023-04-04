@@ -2,10 +2,14 @@ package es.uji.al415634.principal;
 
 import java.util.List;
 
-public class KNN implements Algorithm<List<Double>, Integer> {
+public class KNN implements Algorithm<List<Double>, Integer>, DistanceClient{
     private TableWithLabels tabla;
 
-    public KNN(){}
+    public Distance distance;
+
+    public KNN(Distance distance){
+        this.distance = distance;
+    }
 
     public void train(Table data) {
         this.tabla = (TableWithLabels) data;
@@ -18,7 +22,7 @@ public class KNN implements Algorithm<List<Double>, Integer> {
         for (int i = 0; i < tabla.listaRows.size(); i++) {
             List<Double> punto = tabla.listaRows.get(i).getData();
 
-            double d_euclidea = euclidea(data, punto);
+            double d_euclidea = distance.calculateDistance(data, punto);
             //Guardar la euclidea menor
             if (d_euclidea < closestDistance) {
                 closestIndex = i;
@@ -30,15 +34,7 @@ public class KNN implements Algorithm<List<Double>, Integer> {
         return row.getNumberClass();
     }
 
-    public double euclidea(List<Double> sample, List<Double> punto) {
-        double d_euclidea = 0;
-
-        for (int j = 0; j < punto.size(); j++) {
-            double diferencia = Math.pow(sample.get(j) - punto.get(j), 2);
-            d_euclidea += diferencia;
-        }
-
-        return Math.sqrt(d_euclidea);
+    public void SetDistance(Distance distance) {
+        this.distance = distance;
     }
-
 }

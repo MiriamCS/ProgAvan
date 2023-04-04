@@ -2,19 +2,21 @@ package es.uji.al415634.principal;
 
 import java.util.*;
 
-public class KMeans implements Algorithm<List<Double>, Integer> {
+public class KMeans implements Algorithm<List<Double>, Integer>, DistanceClient {
     private final long seed;
     private final int numIterations;
     private final int numClusters; //numero de grupos
     public List<List<Double>> repre;
+    private Distance distance;
     private Table tabla;
 
     //Constructor
-    public KMeans(int numClusters, int numIterations, long seed){
+    public KMeans(int numClusters, int numIterations, long seed, Distance distance){
         this.seed=seed;
         this.numClusters=numClusters;
         this.numIterations=numIterations;
         repre = new ArrayList<>();
+        this.distance = distance;
     }
 
     //Método que lanza excepcion si número de clusters es mayor que datos
@@ -57,7 +59,7 @@ public class KMeans implements Algorithm<List<Double>, Integer> {
         int closestIndex = -1;
         double closestDistance = Double.POSITIVE_INFINITY;
         for (int j = 0; j < repre.size(); j++) {
-            double d_euclidea = euclidea(repre.get(j), dato);
+            double d_euclidea = distance.calculateDistance(repre.get(j), dato);
             if (d_euclidea < closestDistance) {
                 closestIndex = j;
                 closestDistance = d_euclidea;
@@ -74,16 +76,6 @@ public class KMeans implements Algorithm<List<Double>, Integer> {
             de_que_cluster.add(estimate(row.getData()));
         }
         return de_que_cluster;
-    }
-
-    public double euclidea(List<Double> sample, List<Double> punto) {
-        double d_euclidea = 0;
-        for (int j = 0; j < sample.size(); j++) {
-            double diferencia = Math.pow(sample.get(j) - punto.get(j), 2);
-            d_euclidea += diferencia;
-        }
-
-        return Math.sqrt(d_euclidea);
     }
 
     private List<Double> nuevoCentroide (List<List<Double>> elemGrupo){ //Le llegan solo los elementos de un grupo
@@ -128,4 +120,7 @@ public class KMeans implements Algorithm<List<Double>, Integer> {
         return nuevosRepre;
     }
 
+    public void SetDistance(Distance distance) {
+        this.distance = distance;
+    }
 }
