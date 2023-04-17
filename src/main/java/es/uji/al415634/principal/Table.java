@@ -23,5 +23,7 @@ public class Table {
     public Row getRowAt(int rowNumber){
         return listaRows.get(rowNumber);
     }
-
+    public int getNumRows(){
+        return listaRows.size();
+    }
 }

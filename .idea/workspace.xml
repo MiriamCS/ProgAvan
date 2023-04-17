@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="TERMINADA P2 :)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/DistanceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/EuclideanDistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ManhattanDistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/PruebasVisuales.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" afterDir="false" />
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Primera sesión P3">
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KMeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/SongRecSys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/PruebasVisuales.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,14 +39,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,9 +55,9 @@
       <recent name="es.uji.al415634.principal" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SongRecSys">
-    <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.SongRecSys" />
+  <component name="RunManager" selected="Application.CSV">
+    <configuration name="CSV" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.CSV" />
       <module name="ProgAvan" />
       <extension name="coverage">
         <pattern>
@@ -76,7 +69,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KMeansTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EuclideanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvan" />
       <extension name="coverage">
         <pattern>
@@ -85,13 +78,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KMeansTest" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.EuclideanDistanceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EuclideanDistanceTest.calculateDistance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvan" />
       <extension name="coverage">
         <pattern>
@@ -100,23 +93,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KNNTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KNNTest.estimate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KNNTest" />
-      <option name="METHOD_NAME" value="estimate" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.EuclideanDistanceTest" />
+      <option name="METHOD_NAME" value="calculateDistance" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,13 +115,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ManhattanDistanceTest.calculateDistance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al415634.principal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.ManhattanDistanceTest" />
+      <option name="METHOD_NAME" value="calculateDistance" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SongRecSys" />
-        <item itemvalue="JUnit.KMeansTest" />
-        <item itemvalue="JUnit.KNNTest" />
+        <item itemvalue="Application.CSV" />
+        <item itemvalue="JUnit.EuclideanDistanceTest" />
         <item itemvalue="JUnit.ManhattanDistanceTest" />
-        <item itemvalue="JUnit.KNNTest.estimate" />
+        <item itemvalue="JUnit.ManhattanDistanceTest.calculateDistance" />
+        <item itemvalue="JUnit.EuclideanDistanceTest.calculateDistance" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680432034149</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Primera sesión P3">
+      <created>1680603949471</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680603949471</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +192,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TERMINADA P2 :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="TERMINADA P2 :)" />
+    <MESSAGE value="Primera sesión P3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primera sesión P3" />
   </component>
 </project>
