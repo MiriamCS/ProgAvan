@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Primera sesión P3">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSVLabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSVUnlabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ReaderTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/PruebasVisuales.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +40,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -55,10 +57,10 @@
       <recent name="es.uji.al415634.principal" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CSV">
+  <component name="RunManager" selected="JUnit.KNNTest">
     <configuration name="CSV" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.CSV" />
-      <module name="ProgAvan" />
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -84,8 +86,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EuclideanDistanceTest.calculateDistance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -93,9 +95,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.EuclideanDistanceTest" />
-      <option name="METHOD_NAME" value="calculateDistance" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KNNTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KNNTest" />
         <item itemvalue="Application.CSV" />
         <item itemvalue="JUnit.EuclideanDistanceTest" />
         <item itemvalue="JUnit.ManhattanDistanceTest" />
         <item itemvalue="JUnit.ManhattanDistanceTest.calculateDistance" />
-        <item itemvalue="JUnit.EuclideanDistanceTest.calculateDistance" />
       </list>
     </recent_temporary>
   </component>
@@ -149,6 +150,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680431930175</updated>
+      <workItem from="1681807132201" duration="6204000" />
     </task>
     <task id="LOCAL-00001" summary="TERMINADA P2 :)">
       <created>1680432034149</created>
@@ -166,6 +168,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
