@@ -71,4 +71,10 @@ public class CSVUnlabeledFileReader extends ReaderTemplate<Table> {
         }
         return null;
     }
+
+    //método para crear la tabla
+    @Override
+    public Table createTable(){
+        return new Table();
+    }
 }

@@ -21,7 +21,7 @@ public class KMeans implements Algorithm<List<Double>, Integer>, DistanceClient 
 
     //Método que lanza excepcion si número de clusters es mayor que datos
     private void lanzarExcepcion(int numClusters, int umbral){
-        if(numClusters>umbral){
+        if(numClusters>=umbral){
             throw new IndexOutOfBoundsException();
         }
     }

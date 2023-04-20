@@ -20,7 +20,7 @@ class KMeansTest {
     //private  final CSV csv2 = new CSV();
     private final ReaderTemplate<Table> csv2 = new CSVUnlabeledFileReader("src/main/java/es/uji/al415634/Files/Prueba2");
     //private final Table tabla2 = csv2.readTable("src/main/java/es/uji/al415634/Files/Prueba2");
-    private final Table tabla2 = csv.readTableFromSource();
+    private final Table tabla2 = csv2.readTableFromSource();
     List<Double> puntoPruebas = new ArrayList<>(3);
     List<Double> puntoEstimate = new ArrayList<>(3);
 
