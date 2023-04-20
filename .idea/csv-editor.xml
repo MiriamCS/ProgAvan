@@ -3,14 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\con euc_out.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\hola_out.csv">
+        <entry key="\src\main\java\es\uji\al415634\Files\face.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
