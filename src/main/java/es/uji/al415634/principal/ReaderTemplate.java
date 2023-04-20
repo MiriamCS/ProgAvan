@@ -1,37 +1,47 @@
 package es.uji.al415634.principal;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public abstract class ReaderTemplate {
-    public String source;
-    public Table tabla;
+public abstract class ReaderTemplate<T extends Table>{
+    public  String source;
+    public  T tabla;
     //Constructor
     public ReaderTemplate(String nombreFichero){
         this.source = nombreFichero;
-        this.tabla = new Table();
+        //this.tabla = new Table();
     }
-    //Métodos
-    abstract void openSource(String source) throws IOException;
-    abstract void processHeaders(String headers);
-    abstract void processdata(String data) throws IOException;
-    abstract void closeSource() throws IOException;
-
-    //comprueba si hay más datos; en nuestro caso, si hay más líneas en el fichero CSV
-    abstract boolean hasMoreData() throws IOException;
-
-    //obtener el siguiente dato; una línea del fichero CSV en nuestro caso
-    abstract String getNextData() throws IOException;
-
+    //template method, final so subclass can't override
     public final Table readTableFromSource() throws IOException {
         openSource(source);
+        this.tabla = createTable();
         String headers = getNextData();
         processHeaders(headers);
-        String nuevoDato;
-        while((nuevoDato = getNextData()) != null)
+        String nuevoDato=getNextData();
+        while(nuevoDato != null){
             processdata(nuevoDato);
+            nuevoDato = getNextData();
+        }
         closeSource();
         return tabla;
     }
+
+    //methods to be implemented by subclasses
+    public abstract void openSource(String source) throws IOException;
+    public abstract void processHeaders(String headers);
+    public abstract void processdata(String data) throws IOException;
+    public abstract void closeSource() throws IOException;
+
+    //comprueba si hay más datos; en nuestro caso, si hay más líneas en el fichero CSV
+    public abstract boolean hasMoreData() throws IOException;
+
+    //obtener el siguiente dato; una línea del fichero CSV en nuestro caso
+    public abstract String getNextData() throws IOException;
+
+    //método para crear la tabla
+    public T createTable(){
+        return tabla;
+    }
+
+
 }
 

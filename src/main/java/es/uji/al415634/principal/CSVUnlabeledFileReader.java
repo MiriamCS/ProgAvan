@@ -1,13 +1,12 @@
 package es.uji.al415634.principal;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSVUnlabeledFileReader extends ReaderTemplate {
+public class CSVUnlabeledFileReader extends ReaderTemplate<Table> {
     public int tam;
     public BufferedReader buffer;
     public String cadena; //Leer nuevos datos
@@ -17,12 +16,12 @@ public class CSVUnlabeledFileReader extends ReaderTemplate {
     }
 
     @Override
-    void openSource(String source) throws IOException {
+    public void openSource(String source) throws IOException {
         this.buffer = new BufferedReader(new FileReader(source));
     }
 
     @Override
-    void processHeaders(String headers) {
+    public void processHeaders(String headers) {
         //Pone los headers a la tabla
         String[] vectorHeaders = headers.split(",");
         tam = vectorHeaders.length;
@@ -32,11 +31,12 @@ public class CSVUnlabeledFileReader extends ReaderTemplate {
     }
 
     @Override
-    void processdata(String data) {
+    public void processdata(String data) {
         tabla.addRow(new Row(data(data)));
     }
 
-    List<Double> data(String data){
+    //método auxiliar
+    public List<Double> data(String data){
         String[] vectorDatos = new String[tam];
         for (int i = 0; i< tam; i++){
             vectorDatos[i] = data.split(",")[i];
@@ -48,13 +48,13 @@ public class CSVUnlabeledFileReader extends ReaderTemplate {
         }
         return datos;
     }
-    @Override
-    void closeSource() throws IOException {
-        buffer.close();
-    }
 
     @Override
-    boolean hasMoreData() throws IOException {
+    public void closeSource() throws IOException {
+        buffer.close();
+    }
+    @Override
+    public boolean hasMoreData() throws IOException {
         //Crea los Rows y los va poniendo en la tabla
         String cadena;
         if((cadena = buffer.readLine()) != null){
@@ -65,7 +65,7 @@ public class CSVUnlabeledFileReader extends ReaderTemplate {
     }
 
     @Override
-    String getNextData() throws IOException {
+    public String getNextData() throws IOException {
         if(hasMoreData()){
             return cadena;
         }

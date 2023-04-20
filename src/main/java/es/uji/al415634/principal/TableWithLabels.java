@@ -13,9 +13,6 @@ public class TableWithLabels extends Table {
         listaRows = new ArrayList<>();
         labelsToIndex = new HashMap<>();
     }
-    public void addRow(RowWithLabel row){
-        listaRows.add(row);
-    }
     @Override
     public RowWithLabel getRowAt(int rowNumber){
         return (RowWithLabel) listaRows.get(rowNumber);
