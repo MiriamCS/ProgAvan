@@ -7,14 +7,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class KNNTest {
-    //CSV csv = new CSV();
     ReaderTemplate<Table> csv = new CSVLabeledFileReader("src/main/java/es/uji/al415634/Files/Iris");
-    //using template method
     TableWithLabels tabla = (TableWithLabels) csv.readTableFromSource();
-    //TableWithLabels tabla = csv.readTableLabels("src/main/java/es/uji/al415634/Files/Iris");
     private final double[] s1 = {5.4,2.0,1.9,2.5}; //SAMPLE1
-    private final double[] s2 = {4.5,3.0,4.8,1.2}; //SAMPLE1
-    private final double[] s3 = {6.4,3.9,1.5,0.3}; //SAMPLE1
+    private final double[] s2 = {4.5,3.0,4.8,1.2}; //SAMPLE2
+    private final double[] s3 = {6.4,3.9,1.5,0.3}; //SAMPLE3
     private final List<Double> sample = new ArrayList<>();
     Distance d_eucl = new EuclideanDistance();
     KNN knn_eucl = new KNN(d_eucl);

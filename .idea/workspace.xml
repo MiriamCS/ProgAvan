@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="No sé si estará bien">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="P3 TERMINADA :)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/CSVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ReaderTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ReaderTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +31,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.KNNTest">
+  <component name="RunManager" selected="JUnit.CSVTest">
     <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvan" />
       <extension name="coverage">
@@ -42,7 +47,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CSVTest.readTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EuclideanDistanceTest.calculateDistance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvan" />
       <extension name="coverage">
         <pattern>
@@ -51,24 +56,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.CSVTest" />
-      <option name="METHOD_NAME" value="readTable" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CSVTest.readTableLabels" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.CSVTest" />
-      <option name="METHOD_NAME" value="readTableLabels" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.EuclideanDistanceTest" />
+      <option name="METHOD_NAME" value="calculateDistance" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,13 +93,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ManhattanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al415634.principal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.ManhattanDistanceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KNNTest" />
-        <item itemvalue="JUnit.KMeansTest (1)" />
         <item itemvalue="JUnit.CSVTest" />
-        <item itemvalue="JUnit.CSVTest.readTable" />
-        <item itemvalue="JUnit.CSVTest.readTableLabels" />
+        <item itemvalue="JUnit.KMeansTest (1)" />
+        <item itemvalue="JUnit.KNNTest" />
+        <item itemvalue="JUnit.ManhattanDistanceTest" />
+        <item itemvalue="JUnit.EuclideanDistanceTest.calculateDistance" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682011253996</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="P3 TERMINADA :)">
+      <created>1682014991384</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682014991385</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,39 +157,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="No sé si estará bien" />
-    <option name="LAST_COMMIT_MESSAGE" value="No sé si estará bien" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KNN.java</url>
-          <line>17</line>
-          <properties class="es.uji.al415634.principal.KNN" method="estimate">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSVLabeledFileReader.java</url>
-          <line>10</line>
-          <properties class="es.uji.al415634.principal.CSVLabeledFileReader" method="processdata">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java</url>
-          <line>79</line>
-          <properties class="es.uji.al415634.principal.KMeansTest" method="asignar">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="P3 TERMINADA :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="P3 TERMINADA :)" />
   </component>
 </project>

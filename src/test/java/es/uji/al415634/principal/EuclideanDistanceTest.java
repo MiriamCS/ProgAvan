@@ -2,7 +2,6 @@ package es.uji.al415634.principal;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

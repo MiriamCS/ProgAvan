@@ -12,14 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class KMeansTest {
     //Tabla prueba 1
-    //private final CSV csv = new CSV();
     private final ReaderTemplate<Table> csv = new CSVUnlabeledFileReader("src/main/java/es/uji/al415634/Files/Prueba1");
-    //private final Table tabla1 = csv.readTable("src/main/java/es/uji/al415634/Files/Prueba1");
     private final Table tabla1 = csv.readTableFromSource();
     //Tabla prueba 2
-    //private  final CSV csv2 = new CSV();
     private final ReaderTemplate<Table> csv2 = new CSVUnlabeledFileReader("src/main/java/es/uji/al415634/Files/Prueba2");
-    //private final Table tabla2 = csv2.readTable("src/main/java/es/uji/al415634/Files/Prueba2");
     private final Table tabla2 = csv2.readTableFromSource();
     List<Double> puntoPruebas = new ArrayList<>(3);
     List<Double> puntoEstimate = new ArrayList<>(3);

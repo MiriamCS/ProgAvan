@@ -1,10 +1,7 @@
 package es.uji.al415634.principal;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +10,7 @@ public class CSV {
     //Constructor
     public CSV(){}
     public Table readTable(String nombreFichero) throws IOException {
-        ReaderTemplate rt = new CSVUnlabeledFileReader(nombreFichero);
+        ReaderTemplate<Table> rt = new CSVUnlabeledFileReader(nombreFichero);
         Table tabla = rt.readTableFromSource();
         this.datos=tabla; //PARA LA PRUEBAS VISUALES
         return tabla;
@@ -21,7 +18,7 @@ public class CSV {
 
 
     public TableWithLabels readTableLabels(String nombreFichero) throws IOException {
-        ReaderTemplate rt = new CSVLabeledFileReader(nombreFichero);
+        ReaderTemplate<Table> rt = new CSVLabeledFileReader(nombreFichero);
         TableWithLabels tabla = (TableWithLabels) rt.readTableFromSource();
         this.datos=tabla; //PARA LA PRUEBAS VISUALES
         return tabla;

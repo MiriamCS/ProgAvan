@@ -5,7 +5,7 @@ import java.util.*;
 public class KMeans implements Algorithm<List<Double>, Integer>, DistanceClient {
     private final long seed;
     private final int numIterations;
-    private final int numClusters; //numero de grupos
+    private final int numClusters;
     public List<List<Double>> repre;
     private Distance distance;
     private Table tabla;

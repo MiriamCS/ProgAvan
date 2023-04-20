@@ -8,9 +8,8 @@ public abstract class ReaderTemplate<T extends Table>{
     //Constructor
     public ReaderTemplate(String nombreFichero){
         this.source = nombreFichero;
-        //this.tabla = new Table();
     }
-    //template method, final so subclass can't override
+
     public final Table readTableFromSource() throws IOException {
         openSource(source);
         this.tabla = createTable();
@@ -25,7 +24,7 @@ public abstract class ReaderTemplate<T extends Table>{
         return tabla;
     }
 
-    //methods to be implemented by subclasses
+    //Métodos a implementar por las subclases
     public abstract void openSource(String source) throws IOException;
     public abstract void processHeaders(String headers);
     public abstract void processdata(String data) throws IOException;
