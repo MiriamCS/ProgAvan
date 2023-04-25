@@ -1,5 +1,12 @@
 package es.uji.al415634.principal;
 
+import es.uji.al415634.principal.Algoritmos.KMeans;
+import es.uji.al415634.principal.Distancia.Distance;
+import es.uji.al415634.principal.Distancia.EuclideanDistance;
+import es.uji.al415634.principal.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.Lectura.CSVUnlabeledFileReader;
+import es.uji.al415634.principal.Lectura.ReaderTemplate;
+import es.uji.al415634.principal.Tablas.Table;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

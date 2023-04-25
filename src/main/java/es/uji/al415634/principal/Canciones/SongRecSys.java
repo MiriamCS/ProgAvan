@@ -1,4 +1,13 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Canciones;
+
+import es.uji.al415634.principal.Algoritmos.Algorithm;
+import es.uji.al415634.principal.Algoritmos.KMeans;
+import es.uji.al415634.principal.Algoritmos.KNN;
+import es.uji.al415634.principal.Distancia.Distance;
+import es.uji.al415634.principal.Distancia.EuclideanDistance;
+import es.uji.al415634.principal.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.Lectura.CSV;
+import es.uji.al415634.principal.Tablas.Table;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -26,13 +35,13 @@ class SongRecSys {
         filenames.put("kmeans"+"test",ruta+sep+"songs_test_withoutnames.csv");
 
         // Algorithms
-        Map<String,Algorithm> algorithms = new HashMap<>();
+        Map<String, Algorithm> algorithms = new HashMap<>();
 
         algorithms.put("knn",new KNN(distance));
         algorithms.put("kmeans",new KMeans(15, 200, 4321, distance));
 
         // Tables
-        Map<String,Table> tables = new HashMap<>();
+        Map<String, Table> tables = new HashMap<>();
         String [] stages = {"train", "test"};
         CSV csv = new CSV();
         for (String stage : stages) {

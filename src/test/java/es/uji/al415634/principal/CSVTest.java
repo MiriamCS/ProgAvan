@@ -1,5 +1,12 @@
 package es.uji.al415634.principal;
 
+import es.uji.al415634.principal.Lectura.CSVLabeledFileReader;
+import es.uji.al415634.principal.Lectura.CSVUnlabeledFileReader;
+import es.uji.al415634.principal.Lectura.ReaderTemplate;
+import es.uji.al415634.principal.Tablas.Row;
+import es.uji.al415634.principal.Tablas.RowWithLabel;
+import es.uji.al415634.principal.Tablas.Table;
+import es.uji.al415634.principal.Tablas.TableWithLabels;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

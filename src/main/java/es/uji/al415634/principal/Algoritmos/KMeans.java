@@ -1,4 +1,9 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Algoritmos;
+
+import es.uji.al415634.principal.Distancia.Distance;
+import es.uji.al415634.principal.Distancia.DistanceClient;
+import es.uji.al415634.principal.Tablas.Row;
+import es.uji.al415634.principal.Tablas.Table;
 
 import java.util.*;
 
@@ -36,7 +41,7 @@ public class KMeans implements Algorithm<List<Double>, Integer>, DistanceClient 
         Random random =new Random(seed);
         while (i<numClusters){
             //La semilla devolverá un número aleatorio positivo < núm elementos tabla
-            int aleatorio = random.nextInt(0, tabla.listaRows.size());
+            int aleatorio = random.nextInt(tabla.listaRows.size());
             if(!indexRepr.contains(aleatorio)){
                 indexRepr.add(aleatorio);
                 //Añadir el cluster

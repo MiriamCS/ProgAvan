@@ -1,4 +1,7 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Canciones;
+
+import es.uji.al415634.principal.Algoritmos.Algorithm;
+import es.uji.al415634.principal.Tablas.Table;
 
 import java.util.*;
 

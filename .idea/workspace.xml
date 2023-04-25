@@ -5,10 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="P3 TERMINADA :)">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Grafica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KMeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ReaderTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ReaderTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSVLabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSVLabeledFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSVUnlabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSVUnlabeledFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/Distance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/DistanceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/DistanceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/EuclideanDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/EuclideanDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ManhattanDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/ManhattanDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/ReaderTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/ReaderTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/RowWithLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/RowWithLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/SongRecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/TableWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/CSVTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" afterDir="false" />
@@ -19,11 +38,23 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NrpCRrbiyuFyDQaTB6rbbhtNB7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -31,9 +62,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.CSVTest">
-    <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\al415634\IdeaProjects\ProgAvan\src\main\java\es\uji\al415634\Files" />
+      <recent name="C:\Users\al415634\IdeaProjects\ProgAvan\src\main\java\es\uji\al415634\Files\SinLabels" />
+      <recent name="C:\Users\al415634\IdeaProjects\ProgAvan\src\main\java\es\uji\al415634\Files\ConLabels" />
+      <recent name="C:\Users\al415634\IdeaProjects\ProgAvan\src\main\java\es\uji\al415634\Files\Canciones" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="es.uji.al415634.principal" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ManhattanDistanceTest">
+    <configuration name="CSVTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -47,8 +95,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EuclideanDistanceTest.calculateDistance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="EuclideanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -57,14 +105,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
       <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.EuclideanDistanceTest" />
-      <option name="METHOD_NAME" value="calculateDistance" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="KMeansTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -78,8 +125,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KMeansTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al415634.principal.Distancia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KMeansTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KNNTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -94,7 +156,7 @@
       </method>
     </configuration>
     <configuration name="ManhattanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -110,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CSVTest" />
-        <item itemvalue="JUnit.KMeansTest (1)" />
-        <item itemvalue="JUnit.KNNTest" />
         <item itemvalue="JUnit.ManhattanDistanceTest" />
-        <item itemvalue="JUnit.EuclideanDistanceTest.calculateDistance" />
+        <item itemvalue="JUnit.KNNTest (1)" />
+        <item itemvalue="JUnit.KMeansTest (1)" />
+        <item itemvalue="JUnit.EuclideanDistanceTest" />
+        <item itemvalue="JUnit.CSVTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -126,6 +188,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680431930175</updated>
+      <workItem from="1682412898706" duration="5383000" />
     </task>
     <task id="LOCAL-00001" summary="No sé si estará bien">
       <created>1682011253996</created>
@@ -143,6 +206,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

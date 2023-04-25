@@ -1,8 +1,14 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Algoritmos;
+
+import es.uji.al415634.principal.Distancia.Distance;
+import es.uji.al415634.principal.Distancia.DistanceClient;
+import es.uji.al415634.principal.Tablas.RowWithLabel;
+import es.uji.al415634.principal.Tablas.Table;
+import es.uji.al415634.principal.Tablas.TableWithLabels;
 
 import java.util.List;
 
-public class KNN implements Algorithm<List<Double>, Integer>, DistanceClient{
+public class KNN implements Algorithm<List<Double>, Integer>, DistanceClient {
     private TableWithLabels tabla;
 
     public Distance distance;

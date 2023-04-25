@@ -1,4 +1,12 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Lectura;
+
+import es.uji.al415634.principal.Distancia.Distance;
+import es.uji.al415634.principal.Distancia.EuclideanDistance;
+import es.uji.al415634.principal.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.Algoritmos.KMeans;
+import es.uji.al415634.principal.Tablas.Row;
+import es.uji.al415634.principal.Tablas.Table;
+import es.uji.al415634.principal.Tablas.TableWithLabels;
 
 import java.io.FileWriter;
 import java.io.IOException;

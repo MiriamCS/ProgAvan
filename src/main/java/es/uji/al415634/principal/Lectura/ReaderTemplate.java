@@ -1,4 +1,6 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Lectura;
+
+import es.uji.al415634.principal.Tablas.Table;
 
 import java.io.IOException;
 
