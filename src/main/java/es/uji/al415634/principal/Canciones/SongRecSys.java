@@ -18,6 +18,7 @@ import java.util.Map;
 public class SongRecSys {
     private RecSys recsys;
 
+
     private Distance distance;
 
     public SongRecSys(String method, Distance distance, String cancion) throws Exception {
