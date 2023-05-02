@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Primera sesión P3">
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Intefraz ventana 1 y ventana 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +15,13 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,7 +139,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680431930175</updated>
       <workItem from="1683016751239" duration="112000" />
-      <workItem from="1683016864742" duration="2322000" />
+      <workItem from="1683016864742" duration="3685000" />
     </task>
     <task id="LOCAL-00001" summary="No sé si estará bien">
       <created>1682011253996</created>
@@ -149,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682014991385</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Intefraz ventana 1 y ventana 2">
+      <created>1683019491607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683019491607</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +182,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="No sé si estará bien" />
     <MESSAGE value="P3 TERMINADA :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="P3 TERMINADA :)" />
+    <MESSAGE value="Intefraz ventana 1 y ventana 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Intefraz ventana 1 y ventana 2" />
   </component>
 </project>
