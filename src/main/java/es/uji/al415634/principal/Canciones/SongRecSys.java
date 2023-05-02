@@ -22,8 +22,6 @@ public class SongRecSys {
 
     public SongRecSys(String method, Distance distance, String cancion) throws Exception {
         System.out.println(cancion);
-        System.out.println(method);
-        System.out.println(distance);
         this.distance = distance;
         String sep = System.getProperty("file.separator");
         String ruta = "src/main/java/es/uji/al415634/Files";
