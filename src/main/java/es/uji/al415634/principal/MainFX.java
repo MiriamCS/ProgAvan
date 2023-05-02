@@ -1,5 +1,7 @@
 package es.uji.al415634.principal;
 
+import es.uji.al415634.principal.Distancia.EuclideanDistance;
+import es.uji.al415634.principal.Distancia.ManhattanDistance;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,10 +25,11 @@ public class MainFX extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    public static Controlador controlador = new Controlador();
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        //Controlador controlador = new Controlador();
+
         //primera ventana emergente
         primaryStage.setTitle("Song Recommender");
 
@@ -34,13 +37,13 @@ public class MainFX extends Application {
         ToggleGroup grupo1 = new ToggleGroup();
         Label titulo1 = new Label("Recommendation Type");
         RadioButton knn = new RadioButton("Recommended based on song features");
-        /*knn.setOnAction(e ->{
+        knn.setOnAction(e ->{
             controlador.tipoRecomendacion("knn");
-        });*/
+        });
         RadioButton kmeans = new RadioButton("Recommend based on guessed genre");
-        /*kmeans.setOnAction(e ->{
+        kmeans.setOnAction(e ->{
             controlador.tipoRecomendacion("kmeans");
-        });*/
+        });
         VBox caja1 = new VBox(titulo1,knn, kmeans);
         //Ajustes de la caja1
         caja1.setSpacing(10);
@@ -53,13 +56,13 @@ public class MainFX extends Application {
         ToggleGroup grupo2 = new ToggleGroup();
         Label titulo2 = new Label("Distance Type");
         RadioButton eucl = new RadioButton("Euclidean");
-        /*eucl.setOnAction(e ->{
+        eucl.setOnAction(e ->{
             controlador.tipoDistancia(new EuclideanDistance());
-        });*/
+        });
         RadioButton manh = new RadioButton("Manhattan");
-        /*manh.setOnAction(e ->{
+        manh.setOnAction(e ->{
             controlador.tipoDistancia(new ManhattanDistance());
-        });*/
+        });
         VBox caja2 = new VBox(titulo2,eucl, manh);
         //Ajustes de la caja2
         caja2.setSpacing(10);
@@ -75,10 +78,10 @@ public class MainFX extends Application {
         addTitleSong(canciones);
         //Poner el scrollPanel
         ListView<String> lista = new ListView<>(canciones);
-        /*lista.getSelectionModel().selectedItemProperty().addListener((item, valorInicial, valorActual) -> {
+        lista.getSelectionModel().selectedItemProperty().addListener((item, valorInicial, valorActual) -> {
             controlador.seleccionarCancion(valorActual);
             cancionSeleccionada = valorActual;
-        });*/
+        });
         VBox caja3 = new VBox(titulo3,lista);
         //Ajustes de la caja3
         caja3.setSpacing(10);
@@ -156,7 +159,11 @@ public class MainFX extends Application {
     private class Escuchadora implements EventHandler<ActionEvent>{
         @Override
         public void handle (ActionEvent actionEvent){
-            System.out.println("¡Ouch! Me pulsastes");
+            try {
+                controlador.buscarCancion();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     private ObservableList<String> addTitleSong(ObservableList<String> lista) throws IOException {

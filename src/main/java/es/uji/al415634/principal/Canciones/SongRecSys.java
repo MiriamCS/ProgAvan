@@ -3,10 +3,7 @@ package es.uji.al415634.principal.Canciones;
 import es.uji.al415634.principal.Algoritmos.Algorithm;
 import es.uji.al415634.principal.Algoritmos.KMeans;
 import es.uji.al415634.principal.Algoritmos.KNN;
-import es.uji.al415634.principal.Controlador;
 import es.uji.al415634.principal.Distancia.Distance;
-import es.uji.al415634.principal.Distancia.EuclideanDistance;
-import es.uji.al415634.principal.Distancia.ManhattanDistance;
 import es.uji.al415634.principal.Lectura.CSV;
 import es.uji.al415634.principal.Tablas.Table;
 
@@ -18,12 +15,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class SongRecSys {
+public class SongRecSys {
     private RecSys recsys;
 
     private Distance distance;
 
-    SongRecSys(String method, Distance distance, String cancion) throws Exception {
+    public SongRecSys(String method, Distance distance, String cancion) throws Exception {
+        System.out.println(cancion);
         this.distance = distance;
         String sep = System.getProperty("file.separator");
         String ruta = "src/main/java/es/uji/al415634/Files";
@@ -85,12 +83,4 @@ class SongRecSys {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        Controlador controlador = new Controlador();
-        new SongRecSys("knn", new EuclideanDistance(), "Looktemia");
-        new SongRecSys("kmeans", new EuclideanDistance(), "Looktemia");
-        new SongRecSys("knn", new ManhattanDistance(), "Looktemia");
-        new SongRecSys("kmeans", new ManhattanDistance(), "Looktemia");
-        new SongRecSys(controlador.algoritmo, controlador.distancia, controlador.cancion);
-    }
 }
