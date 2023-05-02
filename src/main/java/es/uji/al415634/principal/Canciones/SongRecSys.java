@@ -3,6 +3,7 @@ package es.uji.al415634.principal.Canciones;
 import es.uji.al415634.principal.Algoritmos.Algorithm;
 import es.uji.al415634.principal.Algoritmos.KMeans;
 import es.uji.al415634.principal.Algoritmos.KNN;
+import es.uji.al415634.principal.Controlador;
 import es.uji.al415634.principal.Distancia.Distance;
 import es.uji.al415634.principal.Distancia.EuclideanDistance;
 import es.uji.al415634.principal.Distancia.ManhattanDistance;
@@ -22,7 +23,7 @@ class SongRecSys {
 
     private Distance distance;
 
-    SongRecSys(String method, Distance distance) throws Exception {
+    SongRecSys(String method, Distance distance, String cancion) throws Exception {
         this.distance = distance;
         String sep = System.getProperty("file.separator");
         String ruta = "src/main/java/es/uji/al415634/Files";
@@ -58,11 +59,10 @@ class SongRecSys {
         this.recsys.run(tables.get(method+"test"), names);
 
         // Given a liked item, ask for a number of recomendations
-        String liked_name = "Lootkemia";
-        List<String> recommended_items = this.recsys.recommend(liked_name,5);
+        List<String> recommended_items = this.recsys.recommend(cancion,5);
 
         // Display the recommendation text (to be replaced with graphical display with JavaFX implementation)
-        reportRecommendation(liked_name,recommended_items);
+        reportRecommendation(cancion,recommended_items);
     }
 
     private List<String> readNames(String fileOfItemNames) throws IOException {
@@ -86,9 +86,11 @@ class SongRecSys {
     }
 
     public static void main(String[] args) throws Exception {
-        new SongRecSys("knn", new EuclideanDistance());
-        new SongRecSys("kmeans", new EuclideanDistance());
-        new SongRecSys("knn", new ManhattanDistance());
-        new SongRecSys("kmeans", new ManhattanDistance());
+        Controlador controlador = new Controlador();
+        new SongRecSys("knn", new EuclideanDistance(), "Looktemia");
+        new SongRecSys("kmeans", new EuclideanDistance(), "Looktemia");
+        new SongRecSys("knn", new ManhattanDistance(), "Looktemia");
+        new SongRecSys("kmeans", new ManhattanDistance(), "Looktemia");
+        new SongRecSys(controlador.algoritmo, controlador.distancia, controlador.cancion);
     }
 }
