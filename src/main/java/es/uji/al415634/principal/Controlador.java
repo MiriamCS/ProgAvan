@@ -15,19 +15,16 @@ public class Controlador implements Grafica{
     @Override
     public void tipoRecomendacion(String rec) {
         this.algoritmo = rec;
-        System.out.println(algoritmo);
     }
 
     @Override
     public void tipoDistancia(Distance distancia) {
         this.distancia = distancia;
-        System.out.println(distancia);
     }
 
     @Override
     public void seleccionarCancion(String texto) {
         this.cancion = texto;
-        System.out.println(cancion);
 
     }
 
