@@ -7,16 +7,13 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
 
 public class MainFX extends Application {
 
@@ -26,6 +23,7 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        //primera ventana emergente
         primaryStage.setTitle("Song Recommender");
 
         //primer apartado
@@ -45,6 +43,9 @@ public class MainFX extends Application {
         ToggleGroup grupo2 = new ToggleGroup();
         Label titulo2 = new Label("Distance Type");
         RadioButton eucl = new RadioButton("Euclidean");
+        eucl.setOnAction(e ->{
+            System.out.println("Seleccionado euclidea");
+        });
         RadioButton manh = new RadioButton("Manhattan");
         VBox caja2 = new VBox(titulo2,eucl, manh);
         //Ajustes de la caja2
@@ -87,42 +88,51 @@ public class MainFX extends Application {
         root.add(caja4,0,3);
 
         //Mostrarlo
-        primaryStage.setScene(new Scene(root, 400, 800));
+        primaryStage.setScene(new Scene(root, 300, 600));
         primaryStage.show();
 
-        /*primaryStage.setTitle("Hello World!");
-        StackPane root = new StackPane();
-        //Button btn = new Button("Hola");
-        CheckBox cafe = new CheckBox("café");
-        CheckBox cortado = new CheckBox("cortado");
-        CheckBox cafeConLeche = new CheckBox("café con leche");
-        VBox vBox = new VBox(cafe, cortado,cafeConLeche);
-        //root.getChildren().add(btn);
-        root.getChildren().add(vBox);
-        primaryStage.setScene(new Scene(root, 250, 250));
-        primaryStage.show();*/
+        /*//segundo ventana emergente
+        primaryStage.setTitle("Recommended titles");
 
-        /*primaryStage.setTitle("Recommendation Type");
-        StackPane root1 = new StackPane();
-        CheckBox knn = new CheckBox("Recommended based on song features");
-        CheckBox kmeans = new CheckBox("Recommend based on guessed genre");
-        VBox vBox1 = new VBox(knn, kmeans);
-        root1.getChildren().add(vBox1);
-        primaryStage.setScene(new Scene(root1, 250, 250));
-        primaryStage.show();*/
+        //primer apartado
+        Label titulo1 = new Label("Number of recommendation:");
+        SpinnerValueFactory<Integer> valores = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000);
+        Spinner<Integer> spinner = new Spinner<>();
+        spinner.setValueFactory(valores);
+        HBox caja1 = new HBox(titulo1, spinner);
+        //Ajustes caja1
+        caja1.setSpacing(10);
+        caja1.setPadding(new Insets(10));
 
-        /*ToggleGroup grupo2 = new ToggleGroup();
-        primaryStage.setTitle("Distance Type");
-        StackPane root2 = new StackPane();
-        RadioButton eucl = new RadioButton("Euclidean");
-        eucl.setOnAction(e -> System.out.println("Selecciona Eculidea"));
-        RadioButton manh = new RadioButton("Manhattan");
-        manh.setOnAction(e -> System.out.println("Selecciona Manhattan"));
-        VBox vBox1 = new VBox(eucl, manh);
-        root2.getChildren().add(vBox1);
-        eucl.setToggleGroup(grupo2);
-        manh.setToggleGroup(grupo2);
-        primaryStage.setScene(new Scene(root2, 250, 250));
+        //segundo apartado
+        Label titulo2 = new Label("If you like NOSEQUE you might like");
+        ObservableList<String> canciones = FXCollections.observableArrayList();
+        ListView<String> lista = new ListView<>(canciones);
+        VBox caja2 = new VBox(titulo2,lista);
+        //Ajustes de la caja2
+        caja2.setSpacing(10);
+        caja2.setPadding(new Insets(10));
+
+        //tercer apartado
+        Button close = new Button("Close");
+        VBox caja3 = new VBox(close);
+        //Ajustes de la caja4
+        caja3.setSpacing(10);
+        caja3.setPadding(new Insets(10));
+
+        //Fusionar
+        GridPane root = new GridPane();
+        root.setPadding(new Insets(10,10,10,10));
+        root.setVgap(5);
+        root.setHgap(5);
+        root.setAlignment(Pos.TOP_LEFT);
+        //Posicionar los elementos
+        root.add(caja1, 0,0);
+        root.add(caja2, 0,1);
+        root.add(caja3, 0,2);
+
+        //Mostrarlo
+        primaryStage.setScene(new Scene(root, 350, 400));
         primaryStage.show();*/
     }
 
