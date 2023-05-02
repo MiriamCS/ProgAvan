@@ -137,7 +137,7 @@ public class MainFX extends Application {
         //tercer apartado
         Button close = new Button("Close");
         VBox caja3 = new VBox(close);
-        //Ajustes de la caja4
+        //Ajustes de la caja3
         caja3.setSpacing(10);
         caja3.setPadding(new Insets(10));
 
@@ -164,7 +164,12 @@ public class MainFX extends Application {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+
         }
+    }
+
+    private crearVentana(){
+        new MainFX(secondaryStage);
     }
     private ObservableList<String> addTitleSong(ObservableList<String> lista) throws IOException {
         BufferedReader buffer = new BufferedReader(new FileReader("src/main/java/es/uji/al415634/Files/songs_train_names.csv"));
