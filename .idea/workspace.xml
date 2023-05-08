@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Intefraz ventana 1 y ventana 2">
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Interfaz gráfica">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/SongRecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Grafica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,18 +17,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -36,14 +39,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
-  }
-}</component>
   <component name="RunManager" selected="Application.MainFX">
     <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.MainFX" />
@@ -58,23 +53,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.CSVTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KMeansTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="KMeansTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -88,8 +68,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="KMeansTest.asignar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -97,14 +77,31 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KNNTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KMeansTest" />
+      <option name="METHOD_NAME" value="asignar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KMeansTest.train" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al415634.principal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KMeansTest" />
+      <option name="METHOD_NAME" value="train" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ManhattanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -121,9 +118,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainFX" />
-        <item itemvalue="JUnit.CSVTest" />
-        <item itemvalue="JUnit.KMeansTest (1)" />
-        <item itemvalue="JUnit.KNNTest" />
+        <item itemvalue="JUnit.KMeansTest" />
+        <item itemvalue="JUnit.KMeansTest.asignar" />
+        <item itemvalue="JUnit.KMeansTest.train" />
         <item itemvalue="JUnit.ManhattanDistanceTest" />
       </list>
     </recent_temporary>
@@ -136,8 +133,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680431930175</updated>
-      <workItem from="1683016751239" duration="112000" />
-      <workItem from="1683016864742" duration="3685000" />
     </task>
     <task id="LOCAL-00001" summary="No sé si estará bien">
       <created>1682011253996</created>
@@ -146,34 +141,12 @@
       <option name="project" value="LOCAL" />
       <updated>1682011253996</updated>
     </task>
-    <task id="LOCAL-00002" summary="P3 TERMINADA :)">
-      <created>1682014991384</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1682014991385</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Intefraz ventana 1 y ventana 2">
-      <created>1683019491607</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1683019491607</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="308b4de9-a532-4451-8a28-1232e72790ab">
-          <value>
-            <State />
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -181,16 +154,42 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="308b4de9-a532-4451-8a28-1232e72790ab" value="TOOL_WINDOW" />
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="No sé si estará bien" />
-    <MESSAGE value="P3 TERMINADA :)" />
-    <MESSAGE value="Intefraz ventana 1 y ventana 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intefraz ventana 1 y ventana 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="No sé si estará bien" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/KNN.java</url>
+          <line>17</line>
+          <properties class="es.uji.al415634.principal.KNN">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/CSVLabeledFileReader.java</url>
+          <line>10</line>
+          <properties class="es.uji.al415634.principal.CSVLabeledFileReader">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java</url>
+          <line>79</line>
+          <properties class="es.uji.al415634.principal.KMeansTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

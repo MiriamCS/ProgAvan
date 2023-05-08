@@ -17,11 +17,10 @@ import java.util.Map;
 
 public class SongRecSys {
     private RecSys recsys;
-
-
     private Distance distance;
+    private List<String> recommended_items;
 
-    public SongRecSys(String method, Distance distance, String cancion) throws Exception {
+    public SongRecSys(String method, Distance distance, String cancion, int numRecomendaciones) throws Exception {
         System.out.println(cancion);
         this.distance = distance;
         String sep = System.getProperty("file.separator");
@@ -44,9 +43,10 @@ public class SongRecSys {
         Map<String, Table> tables = new HashMap<>();
         String [] stages = {"train", "test"};
         CSV csv = new CSV();
+        //HAY QUE MODIFICAR ESTO
         for (String stage : stages) {
-            tables.put("knn" + stage, csv.readTableLabels(filenames.get("knn" + stage)));
-            tables.put("kmeans" + stage, csv.readTable(filenames.get("kmeans" + stage)));
+            tables.put("knn" + stage, csv.readTableLabels(filenames.get(method + stage)));
+            //tables.put("kmeans" + stage, csv.readTable(filenames.get("kmeans" + stage)));
         }
 
         // Names of items
@@ -57,11 +57,13 @@ public class SongRecSys {
         this.recsys.train(tables.get(method+"train"));
         this.recsys.run(tables.get(method+"test"), names);
 
+        //HAY QUE MODIFICAR ESTO
         // Given a liked item, ask for a number of recomendations
-        List<String> recommended_items = this.recsys.recommend(cancion,5);
+        List<String> recommended_items = this.recsys.recommend(cancion,numRecomendaciones);
 
         // Display the recommendation text (to be replaced with graphical display with JavaFX implementation)
-        reportRecommendation(cancion,recommended_items);
+        //reportRecommendation(cancion,recommended_items);
+        reportRecommendation(recommended_items);
     }
 
     private List<String> readNames(String fileOfItemNames) throws IOException {
@@ -76,12 +78,21 @@ public class SongRecSys {
         return names;
     }
 
-    private void reportRecommendation(String liked_name, List<String> recommended_items) {
+    //HAY QUE MODIFICAR ESTO, quitar esto y moverlo en controladores :)
+    /*private void reportRecommendation(String liked_name, List<String> recommended_items) {
         System.out.println("If you liked \""+liked_name+"\" then you might like:");
         for (String name : recommended_items)
         {
             System.out.println("\t * "+name);
         }
+    }*/
+
+    private void reportRecommendation(List<String> recommended_items) {
+      this.recommended_items=recommended_items;
+    }
+
+    public List<String> getReportRecommendation(){
+        return recommended_items;
     }
 
 }

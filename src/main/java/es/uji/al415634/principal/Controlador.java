@@ -4,32 +4,52 @@ package es.uji.al415634.principal;
 import es.uji.al415634.principal.Canciones.SongRecSys;
 import es.uji.al415634.principal.Distancia.Distance;
 
-import static es.uji.al415634.principal.MainFX.controlador;
+import java.util.List;
 
 public class Controlador implements Grafica{
-    public String algoritmo;
-    public Distance distancia;
-    public String cancion;
-
+    private String algoritmo;
+    private Distance distancia;
+    private String cancion;
+    private int numRecomendaciones=1;
+    private List<String> recommended_items;
 
     @Override
-    public void tipoRecomendacion(String rec) {
-        this.algoritmo = rec;
+    public void setRecomendacion(String rec) {this.algoritmo = rec;
     }
 
     @Override
-    public void tipoDistancia(Distance distancia) {
+    public void setDistancia(Distance distancia) {
+
         this.distancia = distancia;
     }
 
     @Override
-    public void seleccionarCancion(String texto) {
-        this.cancion = texto;
-
+    public void setCancion(String cancion) {
+        this.cancion=cancion;
     }
 
+    @Override
+    public void setNumRecomendaciones(int num){this.numRecomendaciones=num;}
+
+    @Override
     public void buscarCancion() throws Exception {
-        new SongRecSys(controlador.algoritmo, controlador.distancia, controlador.cancion);
+        SongRecSys songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones);
+        recommended_items = songRecSys.getReportRecommendation();
+
     }
+
+    @Override
+    public String getCancion(){
+        //System.out.println(cancion);
+        //System.out.println(algoritmo);
+        //System.out.println(numRecomendaciones);
+        return cancion;
+    }
+
+    @Override
+    public List<String> getRecommendation(){
+        return  recommended_items;
+    }
+
 
 }
