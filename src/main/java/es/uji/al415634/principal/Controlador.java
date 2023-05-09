@@ -10,7 +10,7 @@ public class Controlador implements Grafica{
     private String algoritmo;
     private Distance distancia;
     private String cancion;
-    private int numRecomendaciones=1;
+    private int numRecomendaciones;
     private List<String> recommended_items;
 
     @Override
@@ -40,14 +40,11 @@ public class Controlador implements Grafica{
 
     @Override
     public String getCancion(){
-        //System.out.println(cancion);
-        //System.out.println(algoritmo);
-        //System.out.println(numRecomendaciones);
         return cancion;
     }
 
     @Override
-    public List<String> getRecommendation(){
+    public List<String> getRecommendations(){
         return  recommended_items;
     }
 

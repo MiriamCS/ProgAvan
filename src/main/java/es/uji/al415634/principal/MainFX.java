@@ -37,7 +37,7 @@ public class MainFX extends Application {
         //primera ventana emergente
         primaryStage.setTitle("Song Recommender");
 
-        //primer apartado
+        //ALGORTIMO
         ToggleGroup grupo1 = new ToggleGroup();
         Label titulo1 = new Label("Recommendation Type");
         RadioButton knn = new RadioButton("Recommended based on song features");
@@ -45,14 +45,14 @@ public class MainFX extends Application {
         RadioButton kmeans = new RadioButton("Recommend based on guessed genre");
         kmeans.setOnAction(e -> controlador.setRecomendacion("kmeans"));
         VBox caja1 = new VBox(titulo1, knn, kmeans);
-        //Ajustes de la caja1
+            //Ajustes de la caja1
         caja1.setSpacing(10);
         caja1.setPadding(new Insets(10));
-        //Asignarle grupo
+            //Asignarle grupo
         knn.setToggleGroup(grupo1);
         kmeans.setToggleGroup(grupo1);
 
-        //segundo apartado
+        //DISTANCIA
         ToggleGroup grupo2 = new ToggleGroup();
         Label titulo2 = new Label("Distance Type");
         RadioButton eucl = new RadioButton("Euclidean");
@@ -60,27 +60,27 @@ public class MainFX extends Application {
         RadioButton manh = new RadioButton("Manhattan");
         manh.setOnAction(e -> controlador.setDistancia(new ManhattanDistance()));
         VBox caja2 = new VBox(titulo2, eucl, manh);
-        //Ajustes de la caja2
+            //Ajustes de la caja2
         caja2.setSpacing(10);
         caja2.setPadding(new Insets(10));
-        //Asiganarle grupo
+            //Asiganarle grupo
         eucl.setToggleGroup(grupo2);
         manh.setToggleGroup(grupo2);
 
-        //tercer apartado
+        //ELEGIR CANCIÓN
         Label titulo3 = new Label("Song Titles");
         ObservableList<String> canciones = FXCollections.observableArrayList();
-        //Añadir titulos de canciones
+            //Añadir titulos de canciones
         addTitleSong(canciones);
-        //Poner el scrollPanel
+            //Poner el scrollPanel
         ListView<String> lista = new ListView<>(canciones);
         lista.getSelectionModel().selectedItemProperty().addListener((item, valorInicial, valorActual) -> controlador.setCancion(valorActual));
         VBox caja3 = new VBox(titulo3, lista);
-        //Ajustes de la caja3
+            //Ajustes de la caja3
         caja3.setSpacing(10);
         caja3.setPadding(new Insets(10));
 
-        //cuarto apartado
+        //BOTÓN RECOMMEND
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
             start2(secondaryStage);
@@ -91,27 +91,26 @@ public class MainFX extends Application {
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
-            actualizarDatos(controlador.getRecommendation());
+            actualizarDatos(controlador.getRecommendations());
         });
         VBox caja4 = new VBox(recommend);
-        //Ajustes de la caja4
+            //Ajustes de la caja4
         caja4.setSpacing(10);
         caja4.setPadding(new Insets(10));
 
-
-        //Fusionar
+        //FUSIONAR
         GridPane root = new GridPane();
         root.setPadding(new Insets(10, 10, 10, 10));
         root.setVgap(5);
         root.setHgap(5);
         root.setAlignment(Pos.TOP_LEFT);
-        //Posicionar los elementos
+            //Posicionar los elementos
         root.add(caja1, 0, 0);
         root.add(caja2, 0, 1);
         root.add(caja3, 0, 2);
         root.add(caja4, 0, 3);
 
-        //Mostrarlo
+        //MOSTRARLO
         primaryStage.setScene(new Scene(root, 300, 600));
         primaryStage.show();
     }
@@ -120,11 +119,10 @@ public class MainFX extends Application {
         //segundo ventana emergente
         secondaryStage.setTitle("Recommended titles");
 
-        //primer apartado
+        //NÚMERO RECOMENDACIONES
         Label titulo1 = new Label("Number of recommendation:");
-        SpinnerValueFactory<Integer> valores = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,1000);
-        Spinner<Integer> spinner = new Spinner<>();
-        spinner.setValueFactory(valores);
+        controlador.setNumRecomendaciones(5);
+        Spinner<Integer> spinner = new Spinner<>(1,100,5);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
             controlador.setNumRecomendaciones(valorActual);
             try {
@@ -132,14 +130,14 @@ public class MainFX extends Application {
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
-            actualizarDatos(controlador.getRecommendation());
+            actualizarDatos(controlador.getRecommendations());
         });
         HBox caja1 = new HBox(titulo1, spinner);
-        //Ajustes caja1
+            //Ajustes caja1
         caja1.setSpacing(10);
         caja1.setPadding(new Insets(10));
 
-        //segundo apartado
+        //RECOMENDACIONES
         Label titulo2 = new Label("If you like '"+controlador.getCancion()+"' you might like");
         //ObservableList<String> canciones = FXCollections.observableArrayList();
         ListView<String> lista = new ListView<>(cancionesRecomendadas);
@@ -148,7 +146,7 @@ public class MainFX extends Application {
         caja2.setSpacing(10);
         caja2.setPadding(new Insets(10));
 
-        //tercer apartado
+        //BOTÓN CLOSE
         Button close = new Button("Close");
         close.setOnAction(e ->secondaryStage.close());
         VBox caja3 = new VBox(close);
@@ -156,23 +154,23 @@ public class MainFX extends Application {
         caja3.setSpacing(10);
         caja3.setPadding(new Insets(10));
 
-        //Fusionar
+        //FUSIONAR
         GridPane root = new GridPane();
         root.setPadding(new Insets(10,10,10,10));
         root.setVgap(5);
         root.setHgap(5);
         root.setAlignment(Pos.TOP_LEFT);
-        //Posicionar los elementos
+            //Posicionar los elementos
         root.add(caja1, 0,0);
         root.add(caja2, 0,1);
         root.add(caja3, 0,2);
 
-        //Mostrarlo
+        //MOSTRARLO
         secondaryStage.setScene(new Scene(root,  titulo2.getMaxWidth() , 400));
     }
 
     private void addTitleSong(ObservableList<String> lista) throws IOException {
-        BufferedReader buffer = new BufferedReader(new FileReader("src/main/java/es/uji/al415634/Files/songs_train_names.csv"));
+        BufferedReader buffer = new BufferedReader(new FileReader("src/main/java/es/uji/al415634/Files/songs_test_names.csv"));
         String cadena;
         while((cadena= buffer.readLine())!= null){
             lista.add(cadena);

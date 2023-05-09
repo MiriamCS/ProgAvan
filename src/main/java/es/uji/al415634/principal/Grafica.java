@@ -11,6 +11,6 @@ public interface Grafica {
     void setNumRecomendaciones(int num);
     void buscarCancion()throws  Exception;
     String getCancion();
-    List<String> getRecommendation();
+    List<String> getRecommendations();
 
 }

@@ -94,6 +94,7 @@ public class RecSys{
         //1a) Obtener el índice de nameLinkedItem en testItemNames
         int idx = findName(nameLinkedItem);
         //1b) Obtener el dato en testData en la posición idx
+
         List<Double> dato = testData.listaRows.get(idx).getData();
 
         //2) Obtener la etiqueta lbl estimada para dicho elemento

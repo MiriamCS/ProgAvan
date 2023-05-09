@@ -45,8 +45,7 @@ public class SongRecSys {
         CSV csv = new CSV();
 
         for (String stage : stages) {
-            tables.put("knn" + stage, csv.readTableLabels(filenames.get("knn" + stage)));
-            tables.put("kmeans" + stage, csv.readTable(filenames.get("kmeans" + stage)));
+            tables.put(method + stage, csv.readTableLabels(filenames.get(method + stage)));
         }
 
         // Names of items
@@ -57,12 +56,10 @@ public class SongRecSys {
         this.recsys.train(tables.get(method+"train"));
         this.recsys.run(tables.get(method+"test"), names);
 
-        //HAY QUE MODIFICAR ESTO
         // Given a liked item, ask for a number of recomendations
         List<String> recommended_items = this.recsys.recommend(cancion,numRecomendaciones);
 
         // Display the recommendation text (to be replaced with graphical display with JavaFX implementation)
-        //reportRecommendation(cancion,recommended_items);
         reportRecommendation(recommended_items);
     }
 
@@ -77,15 +74,6 @@ public class SongRecSys {
         br.close();
         return names;
     }
-
-    //HAY QUE MODIFICAR ESTO, quitar esto y moverlo en controladores :)
-    /*private void reportRecommendation(String liked_name, List<String> recommended_items) {
-        System.out.println("If you liked \""+liked_name+"\" then you might like:");
-        for (String name : recommended_items)
-        {
-            System.out.println("\t * "+name);
-        }
-    }*/
 
     private void reportRecommendation(List<String> recommended_items) {
       this.recommended_items=recommended_items;
