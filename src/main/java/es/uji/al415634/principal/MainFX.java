@@ -23,6 +23,7 @@ public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
     public static Controlador controlador = new Controlador();
     private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
+    private Label siTeGusta;
 
     public static void main(String[] args) {
         launch(args);
@@ -38,6 +39,57 @@ public class MainFX extends Application {
         primaryStage.setTitle("Song Recommender");
 
         //ALGORTIMO
+        VBox caja1 = obtenerAlgorimo();
+        //DISTANCIA
+        VBox caja2 = obtenerDistancia();
+        //ELEGIR CANCIÓN
+        VBox caja3 = obtenerCancion();
+        //BOTÓN RECOMMEND
+        VBox caja4 = botonRecommend(primaryStage);
+
+        //FUSIONAR
+        GridPane root = new GridPane();
+        root.setPadding(new Insets(10, 10, 10, 10));
+        root.setVgap(5);
+        root.setHgap(5);
+        root.setAlignment(Pos.TOP_LEFT);
+        //Posicionar los elementos
+        root.add(caja1, 0, 0);
+        root.add(caja2, 0, 1);
+        root.add(caja3, 0, 2);
+        root.add(caja4, 0, 3);
+
+        //MOSTRARLO
+        primaryStage.setScene(new Scene(root, 300, 600));
+        primaryStage.show();
+    }
+    public void start2(Stage secondaryStage){
+        //segundo ventana emergente
+        secondaryStage.setTitle("Recommended titles");
+
+        //NÚMERO RECOMENDACIONES
+        HBox caja1 = cantRecomendaciones();
+        //RECOMENDACIONES
+        VBox caja2 = recomendaciones();
+        //BOTÓN CLOSE
+        VBox caja3 = botonClose();
+
+        //FUSIONAR
+        GridPane root = new GridPane();
+        root.setPadding(new Insets(10,10,10,10));
+        root.setVgap(5);
+        root.setHgap(5);
+        root.setAlignment(Pos.TOP_LEFT);
+        //Posicionar los elementos
+        root.add(caja1, 0,0);
+        root.add(caja2, 0,1);
+        root.add(caja3, 0,2);
+
+        //MOSTRARLO
+        secondaryStage.setScene(new Scene(root,  siTeGusta.getMaxWidth() , 400));
+    }
+
+    public VBox obtenerAlgorimo(){
         ToggleGroup grupo1 = new ToggleGroup();
         Label titulo1 = new Label("Recommendation Type");
         RadioButton knn = new RadioButton("Recommended based on song features");
@@ -45,14 +97,17 @@ public class MainFX extends Application {
         RadioButton kmeans = new RadioButton("Recommend based on guessed genre");
         kmeans.setOnAction(e -> controlador.setRecomendacion("kmeans"));
         VBox caja1 = new VBox(titulo1, knn, kmeans);
-            //Ajustes de la caja1
+        //Ajustes de la caja1
         caja1.setSpacing(10);
         caja1.setPadding(new Insets(10));
-            //Asignarle grupo
+        //Asignarle grupo
         knn.setToggleGroup(grupo1);
         kmeans.setToggleGroup(grupo1);
 
-        //DISTANCIA
+        return caja1;
+    }
+
+    public VBox obtenerDistancia(){
         ToggleGroup grupo2 = new ToggleGroup();
         Label titulo2 = new Label("Distance Type");
         RadioButton eucl = new RadioButton("Euclidean");
@@ -60,27 +115,32 @@ public class MainFX extends Application {
         RadioButton manh = new RadioButton("Manhattan");
         manh.setOnAction(e -> controlador.setDistancia(new ManhattanDistance()));
         VBox caja2 = new VBox(titulo2, eucl, manh);
-            //Ajustes de la caja2
+        //Ajustes de la caja2
         caja2.setSpacing(10);
         caja2.setPadding(new Insets(10));
-            //Asiganarle grupo
+        //Asiganarle grupo
         eucl.setToggleGroup(grupo2);
         manh.setToggleGroup(grupo2);
 
-        //ELEGIR CANCIÓN
+        return caja2;
+    }
+
+    public VBox obtenerCancion() throws IOException {
         Label titulo3 = new Label("Song Titles");
         ObservableList<String> canciones = FXCollections.observableArrayList();
-            //Añadir titulos de canciones
+        //Añadir titulos de canciones
         addTitleSong(canciones);
-            //Poner el scrollPanel
+        //Poner el scrollPanel
         ListView<String> lista = new ListView<>(canciones);
         lista.getSelectionModel().selectedItemProperty().addListener((item, valorInicial, valorActual) -> controlador.setCancion(valorActual));
         VBox caja3 = new VBox(titulo3, lista);
-            //Ajustes de la caja3
+        //Ajustes de la caja3
         caja3.setSpacing(10);
         caja3.setPadding(new Insets(10));
+        return caja3;
+    }
 
-        //BOTÓN RECOMMEND
+    public VBox botonRecommend(Stage primaryStage){
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
             start2(secondaryStage);
@@ -94,32 +154,13 @@ public class MainFX extends Application {
             actualizarDatos(controlador.getRecommendations());
         });
         VBox caja4 = new VBox(recommend);
-            //Ajustes de la caja4
+        //Ajustes de la caja4
         caja4.setSpacing(10);
         caja4.setPadding(new Insets(10));
-
-        //FUSIONAR
-        GridPane root = new GridPane();
-        root.setPadding(new Insets(10, 10, 10, 10));
-        root.setVgap(5);
-        root.setHgap(5);
-        root.setAlignment(Pos.TOP_LEFT);
-            //Posicionar los elementos
-        root.add(caja1, 0, 0);
-        root.add(caja2, 0, 1);
-        root.add(caja3, 0, 2);
-        root.add(caja4, 0, 3);
-
-        //MOSTRARLO
-        primaryStage.setScene(new Scene(root, 300, 600));
-        primaryStage.show();
+        return caja4;
     }
-    public void start2(Stage secondaryStage){
 
-        //segundo ventana emergente
-        secondaryStage.setTitle("Recommended titles");
-
-        //NÚMERO RECOMENDACIONES
+    public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
         controlador.setNumRecomendaciones(5);
         Spinner<Integer> spinner = new Spinner<>(1,100,5);
@@ -133,40 +174,30 @@ public class MainFX extends Application {
             actualizarDatos(controlador.getRecommendations());
         });
         HBox caja1 = new HBox(titulo1, spinner);
-            //Ajustes caja1
+        //Ajustes caja1
         caja1.setSpacing(10);
         caja1.setPadding(new Insets(10));
+        return caja1;
+    }
 
-        //RECOMENDACIONES
-        Label titulo2 = new Label("If you like '"+controlador.getCancion()+"' you might like");
-        //ObservableList<String> canciones = FXCollections.observableArrayList();
+    public VBox recomendaciones(){
+        siTeGusta = new Label("If you like '"+controlador.getCancion()+"' you might like");
         ListView<String> lista = new ListView<>(cancionesRecomendadas);
-        VBox caja2 = new VBox(titulo2,lista);
+        VBox caja2 = new VBox(siTeGusta,lista);
         //Ajustes de la caja2
         caja2.setSpacing(10);
         caja2.setPadding(new Insets(10));
+        return caja2;
+    }
 
-        //BOTÓN CLOSE
+    public VBox botonClose(){
         Button close = new Button("Close");
         close.setOnAction(e ->secondaryStage.close());
         VBox caja3 = new VBox(close);
         //Ajustes de la caja4
         caja3.setSpacing(10);
         caja3.setPadding(new Insets(10));
-
-        //FUSIONAR
-        GridPane root = new GridPane();
-        root.setPadding(new Insets(10,10,10,10));
-        root.setVgap(5);
-        root.setHgap(5);
-        root.setAlignment(Pos.TOP_LEFT);
-            //Posicionar los elementos
-        root.add(caja1, 0,0);
-        root.add(caja2, 0,1);
-        root.add(caja3, 0,2);
-
-        //MOSTRARLO
-        secondaryStage.setScene(new Scene(root,  titulo2.getMaxWidth() , 400));
+        return caja3;
     }
 
     private void addTitleSong(ObservableList<String> lista) throws IOException {
