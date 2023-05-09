@@ -7,8 +7,8 @@ import es.uji.al415634.principal.Distancia.Distance;
 import java.util.List;
 
 public class Controlador implements Grafica{
-    private String algoritmo;
-    private Distance distancia;
+    public String algoritmo;
+    public Distance distancia;
     private String cancion;
     private int numRecomendaciones;
     private List<String> recommended_items;

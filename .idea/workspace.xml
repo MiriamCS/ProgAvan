@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Intefraz ventana 1 y ventana 2">
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="MainFX dividido en métodos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683019491607</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="MainFX dividido en métodos">
+      <created>1683623679284</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683623679284</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +198,7 @@
     <MESSAGE value="No sé si estará bien" />
     <MESSAGE value="P3 TERMINADA :)" />
     <MESSAGE value="Intefraz ventana 1 y ventana 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intefraz ventana 1 y ventana 2" />
+    <MESSAGE value="MainFX dividido en métodos" />
+    <option name="LAST_COMMIT_MESSAGE" value="MainFX dividido en métodos" />
   </component>
 </project>

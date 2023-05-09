@@ -21,6 +21,7 @@ import java.util.List;
 
 public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
+    private final Stage cuaternaryStage = new Stage();
     public static Controlador controlador = new Controlador();
     private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
     private Label siTeGusta;
@@ -89,6 +90,19 @@ public class MainFX extends Application {
         secondaryStage.setScene(new Scene(root,  siTeGusta.getMaxWidth() , 400));
     }
 
+    public void start4(Stage cuaternaryStage){
+        cuaternaryStage.setTitle("AVISO");
+        Label mensaje = new Label(" Falta algo por seleccionar");
+        mensaje.setStyle("-fx-text-fill: red");
+        VBox close = botonClose();
+        GridPane root = new GridPane();
+        root.add(mensaje, 0,0);
+        root.add(close, 0,1);
+        //MOSTRARLO
+        cuaternaryStage.setScene(new Scene(root, 300, 100));
+        cuaternaryStage.show();
+    }
+
     public VBox obtenerAlgorimo(){
         ToggleGroup grupo1 = new ToggleGroup();
         Label titulo1 = new Label("Recommendation Type");
@@ -143,16 +157,20 @@ public class MainFX extends Application {
     public VBox botonRecommend(Stage primaryStage){
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
-            start2(secondaryStage);
-            secondaryStage.show();
-            primaryStage.close();
-            try {
-                controlador.buscarCancion();
-            } catch (Exception excepcion) {
-                excepcion.printStackTrace();
+            if(controlador.algoritmo == null || controlador.distancia == null || controlador.getCancion() == null){
+                start4(cuaternaryStage);
             }
-            actualizarDatos(controlador.getRecommendations());
-        });
+            else {
+                start2(secondaryStage);
+                secondaryStage.show();
+                primaryStage.close();
+                try {
+                    controlador.buscarCancion();
+                } catch (Exception excepcion) {
+                    excepcion.printStackTrace();
+                }
+                actualizarDatos(controlador.getRecommendations());
+            }});
         VBox caja4 = new VBox(recommend);
         //Ajustes de la caja4
         caja4.setSpacing(10);
