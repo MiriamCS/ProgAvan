@@ -21,7 +21,6 @@ import java.util.List;
 
 public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
-    private final Stage cuaternaryStage = new Stage();
     public static Controlador controlador = new Controlador();
     private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
     private boolean estado=false;
@@ -92,17 +91,17 @@ public class MainFX extends Application {
         secondaryStage.setScene(new Scene(root,  siTeGusta.getMaxWidth() , 400));
     }
 
-    public void start4(Stage cuaternaryStage){
-        cuaternaryStage.setTitle("AVISO");
-        Label mensaje = new Label(" Falta algo por seleccionar");
-        mensaje.setStyle("-fx-text-fill: red");
-        VBox close = botonClose();
-        GridPane root = new GridPane();
-        root.add(mensaje, 0,0);
-        root.add(close, 0,1);
+    public void start3(Alert alert, int numRecomd, int cant){
+        //tercera ventana emergente
+        alert.setTitle("WARNING");
+        alert.setContentText("No hay "+numRecomd+" recomendaciones, solo hay "+cant+" recomendaciones disponibles");
+    }
+
+    public void start4(Alert alert){
+        alert.setTitle("AVISO");
+        alert.setContentText(" Falta algo por seleccionar");
         //MOSTRARLO
-        cuaternaryStage.setScene(new Scene(root, 300, 100));
-        cuaternaryStage.show();
+        alert.show();
     }
 
     public VBox obtenerAlgorimo(){
@@ -160,7 +159,8 @@ public class MainFX extends Application {
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
             if(controlador.algoritmo == null || controlador.distancia == null || controlador.getCancion() == null){
-                start4(cuaternaryStage);
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                start4(alert);
             }
             else {
                 start2(secondaryStage);
@@ -223,12 +223,6 @@ public class MainFX extends Application {
         caja3.setSpacing(10);
         caja3.setPadding(new Insets(10));
         return caja3;
-    }
-
-    public void start3(Alert alert, int numRecomd, int cant){
-        //tercera ventana emergente
-        alert.setTitle("WARNING");
-        alert.setContentText("No hay "+numRecomd+" recomendaciones, solo hay "+cant+" recomendaciones disponibles");
     }
 
     private void addTitleSong(ObservableList<String> lista) throws IOException {
