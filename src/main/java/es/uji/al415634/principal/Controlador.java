@@ -37,7 +37,10 @@ public class Controlador implements Grafica{
         recommended_items = songRecSys.getReportRecommendation();
 
     }
-
+    @Override
+    public int getNumRecomendaciones(){
+        return numRecomendaciones;
+    }
     @Override
     public String getCancion(){
         return cancion;

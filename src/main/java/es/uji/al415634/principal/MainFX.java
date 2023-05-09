@@ -24,6 +24,8 @@ public class MainFX extends Application {
     private final Stage cuaternaryStage = new Stage();
     public static Controlador controlador = new Controlador();
     private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
+    private boolean estado=false;
+    private int valueMax=100;
     private Label siTeGusta;
 
     public static void main(String[] args) {
@@ -181,7 +183,7 @@ public class MainFX extends Application {
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
         controlador.setNumRecomendaciones(5);
-        Spinner<Integer> spinner = new Spinner<>(1,100,5);
+        Spinner<Integer> spinner = new Spinner<>(1,valueMax,5);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
             controlador.setNumRecomendaciones(valorActual);
             try {
@@ -190,6 +192,11 @@ public class MainFX extends Application {
                 excepcion.printStackTrace();
             }
             actualizarDatos(controlador.getRecommendations());
+            if(estado){
+                SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,valueMax,valueMax);
+                spinner.valueFactoryProperty().setValue(valoresNuevos);
+            }
+
         });
         HBox caja1 = new HBox(titulo1, spinner);
         //Ajustes caja1
@@ -218,6 +225,12 @@ public class MainFX extends Application {
         return caja3;
     }
 
+    public void start3(Alert alert, int numRecomd, int cant){
+        //tercera ventana emergente
+        alert.setTitle("WARNING");
+        alert.setContentText("No hay "+numRecomd+" recomendaciones, solo hay "+cant+" recomendaciones disponibles");
+    }
+
     private void addTitleSong(ObservableList<String> lista) throws IOException {
         BufferedReader buffer = new BufferedReader(new FileReader("src/main/java/es/uji/al415634/Files/songs_test_names.csv"));
         String cadena;
@@ -227,7 +240,20 @@ public class MainFX extends Application {
     }
 
     private void actualizarDatos(List<String> lista){
+        System.out.println(lista.size());
         cancionesRecomendadas.clear();
         cancionesRecomendadas.addAll(lista);
+        //Si el número de elementos es menor que numRec...
+        if(lista.size() < controlador.getNumRecomendaciones()){
+            estado=true;
+            valueMax=lista.size();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            start3(alert, controlador.getNumRecomendaciones(), lista.size());
+            controlador.setNumRecomendaciones(lista.size());
+            alert.show();
+        }else{
+            estado=false;
+            valueMax=100;
+        }
     }
 }

@@ -61,17 +61,16 @@ public class RecSys{
         List<Integer> estimaciones = etiquetaEstimada.get(labelLikedItem);
         int cant= estimaciones.size();
         //El for será numRec a no ser que hayan menos elementos que numRec, si hay menos serán el número de elementos
+        System.out.println("cant: "+cant);
+        System.out.println("numRec: "+numRec);
         if (cant>numRec){ cant = numRec;}
         for(int i= 0; i<cant; i++){
             if(estimaciones.get(i) == idxLikedItem){ //Si la original, la salta y buscará una más
                 cant ++;
             }
-            else
+            else {
                 listaIndRec.add(estimaciones.get(i)); //Añado a listaIndRec todos los índices de los elementos con la misma etiqueta
-        }
-        //Si el número de elementos es menor que numRec...
-        if(cant <  numRec){
-            System.out.println("No hay "+ numRec+ " recomendaciones, solo hay "+ cant+ " recomendaciones disponibles");
+            }
         }
 
         return listaIndRec;
