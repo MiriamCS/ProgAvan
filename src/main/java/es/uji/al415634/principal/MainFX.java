@@ -13,7 +13,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -89,13 +88,6 @@ public class MainFX extends Application {
 
         //MOSTRARLO
         secondaryStage.setScene(new Scene(root,  siTeGusta.getMaxWidth() , 400));
-    }
-
-    public void start4(Alert alert){
-        alert.setTitle("AVISO");
-        alert.setContentText(" Falta algo por seleccionar");
-        //MOSTRARLO
-        alert.show();
     }
 
     public void startAlert(Alert alert, String mensaje){
@@ -184,7 +176,8 @@ public class MainFX extends Application {
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
         controlador.setNumRecomendaciones(5);
-        Spinner<Integer> spinner = new Spinner<>(1,valueMax,5);
+        Spinner<Integer> spinner = new Spinner<>(1,valueMax,5,1);
+        spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
             controlador.setNumRecomendaciones(valorActual);
             try {
@@ -197,8 +190,8 @@ public class MainFX extends Application {
                 SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,valueMax,valueMax);
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
             }
-
         });
+
         HBox caja1 = new HBox(titulo1, spinner);
         //Ajustes caja1
         caja1.setSpacing(10);
