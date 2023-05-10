@@ -91,17 +91,16 @@ public class MainFX extends Application {
         secondaryStage.setScene(new Scene(root,  siTeGusta.getMaxWidth() , 400));
     }
 
-    public void start3(Alert alert, int numRecomd, int cant){
-        //tercera ventana emergente
-        alert.setTitle("WARNING");
-        alert.setContentText("No hay "+numRecomd+" recomendaciones, solo hay "+cant+" recomendaciones disponibles");
-    }
-
     public void start4(Alert alert){
         alert.setTitle("AVISO");
         alert.setContentText(" Falta algo por seleccionar");
         //MOSTRARLO
         alert.show();
+    }
+
+    public void startAlert(Alert alert, String mensaje){
+        alert.setTitle("WARNING");
+        alert.setContentText(mensaje);
     }
 
     public VBox obtenerAlgorimo(){
@@ -160,7 +159,9 @@ public class MainFX extends Application {
         recommend.setOnAction(e ->{
             if(controlador.algoritmo == null || controlador.distancia == null || controlador.getCancion() == null){
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                start4(alert);
+                String mensaje = "¡¡Falta algo por seleccionar!!";
+                startAlert(alert, mensaje);
+                alert.show();
             }
             else {
                 start2(secondaryStage);
@@ -242,7 +243,8 @@ public class MainFX extends Application {
             estado=true;
             valueMax=lista.size();
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            start3(alert, controlador.getNumRecomendaciones(), lista.size());
+            String mensaje = "No hay "+ controlador.getNumRecomendaciones() +" recomendaciones, solo hay "+ lista.size() +" recomendaciones disponibles";
+            startAlert(alert, mensaje);
             controlador.setNumRecomendaciones(lista.size());
             alert.show();
         }else{

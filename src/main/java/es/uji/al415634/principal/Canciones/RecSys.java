@@ -65,12 +65,17 @@ public class RecSys{
         System.out.println("numRec: "+numRec);
         if (cant>numRec){ cant = numRec;}
         for(int i= 0; i<cant; i++){
-            if(estimaciones.get(i) == idxLikedItem){ //Si la original, la salta y buscará una más
-                cant ++;
+            try{
+                if(estimaciones.get(i) == idxLikedItem){ //Si la original, la salta y buscará una más
+                    cant ++;
+                }
+                else {
+                    listaIndRec.add(estimaciones.get(i)); //Añado a listaIndRec todos los índices de los elementos con la misma etiqueta
+                }
+            }catch (IndexOutOfBoundsException excepcion){
+                System.out.println("");
             }
-            else {
-                listaIndRec.add(estimaciones.get(i)); //Añado a listaIndRec todos los índices de los elementos con la misma etiqueta
-            }
+
         }
 
         return listaIndRec;
