@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Pequeños arreglos, no he tocado spinner">
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Excepcion/NumeroClusterNoValidoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -34,7 +40,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="Application.MainFX">
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="JUnit.KMeansTest">
     <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.MainFX" />
       <module name="Pr1y2" />
@@ -112,10 +123,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainFX" />
         <item itemvalue="JUnit.KMeansTest" />
-        <item itemvalue="JUnit.KMeansTest.asignar" />
         <item itemvalue="JUnit.KMeansTest.train" />
+        <item itemvalue="Application.MainFX" />
+        <item itemvalue="JUnit.KMeansTest.asignar" />
         <item itemvalue="JUnit.ManhattanDistanceTest" />
       </list>
     </recent_temporary>
@@ -150,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683748914810</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <created>1683751512260</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683751512260</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +186,8 @@
     <MESSAGE value="No sé si estará bien" />
     <MESSAGE value="Falta arreglar cosas... en general funciona :)" />
     <MESSAGE value="Pequeños arreglos, no he tocado spinner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pequeños arreglos, no he tocado spinner" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -191,6 +210,10 @@
           </properties>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException" package="es.uji.al415634.principal.Excepcion" />
+          <option name="timeStamp" value="11" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

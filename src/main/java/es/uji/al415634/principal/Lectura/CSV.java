@@ -4,6 +4,7 @@ import es.uji.al415634.principal.Distancia.Distance;
 import es.uji.al415634.principal.Distancia.EuclideanDistance;
 import es.uji.al415634.principal.Distancia.ManhattanDistance;
 import es.uji.al415634.principal.Algoritmos.KMeans;
+import es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException;
 import es.uji.al415634.principal.Tablas.Row;
 import es.uji.al415634.principal.Tablas.Table;
 import es.uji.al415634.principal.Tablas.TableWithLabels;
@@ -56,7 +57,7 @@ public class CSV {
         }
     }
 
-    public void savePredictions(Distance distancia) {
+    public void savePredictions(Distance distancia) throws NumeroClusterNoValidoException {
         KMeans kmeans = new KMeans(4,3, 200, distancia);
         kmeans.train(datos);
 
@@ -86,7 +87,7 @@ public class CSV {
     //Deberías encontrar un fichero con el nombre que has introducido, cuyo contenido será los datos de la tabla + una columna de estimación
     //Se han hecho cambios en KMeans en el método euclidea → solo se ha puesto una condición, no se ha modificado nada más
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NumeroClusterNoValidoException {
         //Tabla prueba
         CSV csv = new CSV();
         csv.readTable("src/main/java/es/uji/al415634/Files/face.csv");

@@ -1,6 +1,7 @@
 package es.uji.al415634.principal.Canciones;
 
 import es.uji.al415634.principal.Algoritmos.Algorithm;
+import es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException;
 import es.uji.al415634.principal.Tablas.Table;
 
 import java.util.*;
@@ -10,10 +11,10 @@ import java.util.*;
 //Cuando se usa train() o estimate(), son los correspondientes a KMeans o KNN
 
 public class RecSys{
-    public Algorithm algorithm;
-    public HashMap<Integer, List<Integer>> etiquetaEstimada;
-    public Table testData;
-    public List<String> testItemNames;
+    private final Algorithm algorithm;
+    private final HashMap<Integer, List<Integer>> etiquetaEstimada;
+    private Table testData;
+    private List<String> testItemNames;
 
     //Constructor
     public RecSys(Algorithm algorithm){
@@ -21,7 +22,7 @@ public class RecSys{
         etiquetaEstimada = new HashMap<>();
     }
 
-    public void train(Table trainData){
+    public void train(Table trainData) throws NumeroClusterNoValidoException {
         //Entrenar al algoritmo correspondiente
         algorithm.train(trainData);
     }
@@ -73,7 +74,7 @@ public class RecSys{
                     listaIndRec.add(estimaciones.get(i)); //Añado a listaIndRec todos los índices de los elementos con la misma etiqueta
                 }
             }catch (IndexOutOfBoundsException excepcion){
-                System.out.println("");
+                System.out.println();
             }
 
         }
@@ -90,6 +91,9 @@ public class RecSys{
         return recomendaciones;
     }
 
+    private List<Double> obtenerDato(int idx, Table tabla){
+        return tabla.listaRows.get(idx).getData();
+    }
 
     public List<String> recommend(String nameLinkedItem, int numRecommendations){
 
@@ -99,7 +103,8 @@ public class RecSys{
         int idx = findName(nameLinkedItem);
         //1b) Obtener el dato en testData en la posición idx
 
-        List<Double> dato = testData.listaRows.get(idx).getData();
+        List<Double> dato = obtenerDato(idx,testData);
+        //List<Double> dato = testData.listaRows.get(idx).getData();
 
         //2) Obtener la etiqueta lbl estimada para dicho elemento
         int lbl = (int) algorithm.estimate(dato);

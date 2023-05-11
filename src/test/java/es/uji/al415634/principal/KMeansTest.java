@@ -4,6 +4,7 @@ import es.uji.al415634.principal.Algoritmos.KMeans;
 import es.uji.al415634.principal.Distancia.Distance;
 import es.uji.al415634.principal.Distancia.EuclideanDistance;
 import es.uji.al415634.principal.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException;
 import es.uji.al415634.principal.Lectura.CSVUnlabeledFileReader;
 import es.uji.al415634.principal.Lectura.ReaderTemplate;
 import es.uji.al415634.principal.Tablas.Table;
@@ -44,10 +45,10 @@ class KMeansTest {
     }
 
     @Test
-    void train() {
+    void train() throws NumeroClusterNoValidoException{
         //prueba 1: debe lanzar excepcion
         KMeans kmeans = new KMeans(13,4,415634, distance);
-        assertThrows(IndexOutOfBoundsException.class, ()-> kmeans.train(tabla1));
+        assertThrows(NumeroClusterNoValidoException.class, ()-> kmeans.train(tabla1));
         //prueba 1: no debe lanzar excepcion
         KMeans kmeans1 = new KMeans(3,4,415634, distance);
         kmeans1.train(tabla1);
@@ -55,7 +56,7 @@ class KMeansTest {
 
         //prueba 2: debe lanzar excepcion
         KMeans kmeans2 = new KMeans(12, 2, 415634, distance);
-        assertThrows(IndexOutOfBoundsException.class, ()-> kmeans2.train(tabla2));
+        assertThrows(NumeroClusterNoValidoException.class, ()-> kmeans2.train(tabla2));
         //prueba2: no sebe lanzar excepcion
         KMeans kmeans3 = new KMeans(2,4,415634, distance);
         kmeans3.train(tabla2);
@@ -63,7 +64,7 @@ class KMeansTest {
     }
 
     @Test
-    void estimate() {
+    void estimate() throws NumeroClusterNoValidoException {
         Distance d_eucl = new EuclideanDistance();
         KMeans kmeans_eucl = new KMeans(2, 2, 415634, d_eucl);
         kmeans_eucl.train(tabla1);
@@ -80,7 +81,7 @@ class KMeansTest {
     }
 
     @Test
-    void asignar() {
+    void asignar() throws NumeroClusterNoValidoException {
         //prueba 1
         Integer[] solucionPrueba1 = {0, 2, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1};
         KMeans kmeans = new KMeans(3,4,415634, distance);
@@ -99,7 +100,7 @@ class KMeansTest {
         }
     }
     @Test
-    void nuevosCentroides() {
+    void nuevosCentroides() throws NumeroClusterNoValidoException {
         //Prueba 1
         List<List<Double>> solucionPrueba1 = new ArrayList<>();
         List<Double> c1 = new ArrayList<>();

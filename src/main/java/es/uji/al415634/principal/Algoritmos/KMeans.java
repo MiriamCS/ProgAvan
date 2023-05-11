@@ -2,6 +2,7 @@ package es.uji.al415634.principal.Algoritmos;
 
 import es.uji.al415634.principal.Distancia.Distance;
 import es.uji.al415634.principal.Distancia.DistanceClient;
+import es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException;
 import es.uji.al415634.principal.Tablas.Row;
 import es.uji.al415634.principal.Tablas.Table;
 
@@ -25,20 +26,22 @@ public class KMeans implements Algorithm<List<Double>, Integer>, DistanceClient 
     }
 
     //Método que lanza excepcion si número de clusters es mayor que datos
-    private void lanzarExcepcion(int numClusters, int umbral){
-        if(numClusters>=umbral){
-            throw new IndexOutOfBoundsException();
-        }
+    private void lanzarExcepcion() throws NumeroClusterNoValidoException {
+        throw new NumeroClusterNoValidoException();
     }
 
-    public  void train(Table data){
+    @Override
+    public  void train(Table data) throws NumeroClusterNoValidoException {
         this.tabla = data;
         Set<Integer> indexRepr = new HashSet<>(); //Colección para evitar repetir el cluster aleatorio
         //Elegir aleatoriamente un semilla
         int i=0;
         //Comprobar si el número de grupo es mayor que el de datos
-        lanzarExcepcion(numClusters, tabla.listaRows.size());
+        if(numClusters>=tabla.listaRows.size()){
+            lanzarExcepcion();
+        }
         Random random =new Random(seed);
+
         while (i<numClusters){
             //La semilla devolverá un número aleatorio positivo < núm elementos tabla
             int aleatorio = random.nextInt(tabla.listaRows.size());
