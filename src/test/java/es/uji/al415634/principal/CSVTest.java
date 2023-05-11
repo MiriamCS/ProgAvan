@@ -55,7 +55,7 @@ class CSVTest {
         assertEquals(150, tabla.listaRows.size());
 
         //Comprobar num columnas headers
-        assertEquals(4, tabla.headers.size());
+        assertEquals(5, tabla.headers.size());
 
         //Comprobar etiquetas headers
         assertEquals("sepal length", tabla.headers.get(0));
