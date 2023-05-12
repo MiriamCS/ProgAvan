@@ -50,7 +50,9 @@ class CSVTest {
     @Test
     void readTableLabels() throws IOException {
         CSV csv = new CSV();
-        TableWithLabels tabla = csv.readTableLabels("src/main/java/es/uji/al415634/Files/Iris");
+        String sep = System.getProperty("file.separator");
+        String ruta = "src/main/java/es/uji/al415634/Files";
+        TableWithLabels tabla = csv.readTableLabels(ruta+sep+"Iris");
         //Comprobar num rows
         assertEquals(150, tabla.listaRows.size());
 

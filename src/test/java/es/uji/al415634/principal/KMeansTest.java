@@ -19,11 +19,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class KMeansTest {
+    String sep = System.getProperty("file.separator");
+    String ruta = "src/main/java/es/uji/al415634/Files";
     //Tabla prueba 1
-    private final ReaderTemplate<Table> csv = new CSVUnlabeledFileReader("src/main/java/es/uji/al415634/Files/Prueba1");
+    private final ReaderTemplate<Table> csv = new CSVUnlabeledFileReader(ruta+sep+"Prueba1");
     private final Table tabla1 = csv.readTableFromSource();
     //Tabla prueba 2
-    private final ReaderTemplate<Table> csv2 = new CSVUnlabeledFileReader("src/main/java/es/uji/al415634/Files/Prueba2");
+    private final ReaderTemplate<Table> csv2 = new CSVUnlabeledFileReader(ruta+sep+"Prueba2");
     private final Table tabla2 = csv2.readTableFromSource();
     List<Double> puntoPruebas = new ArrayList<>(3);
     List<Double> puntoEstimate = new ArrayList<>(3);

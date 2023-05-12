@@ -16,7 +16,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class KNNTest {
-    ReaderTemplate<Table> csv = new CSVLabeledFileReader("src/main/java/es/uji/al415634/Files/Iris");
+    String sep = System.getProperty("file.separator");
+    String ruta = "src/main/java/es/uji/al415634/Files";
+    ReaderTemplate<Table> csv = new CSVLabeledFileReader(ruta+sep+"Iris");
     TableWithLabels tabla = (TableWithLabels) csv.readTableFromSource();
     private final double[] s1 = {5.4,2.0,1.9,2.5}; //SAMPLE1
     private final double[] s2 = {4.5,3.0,4.8,1.2}; //SAMPLE2

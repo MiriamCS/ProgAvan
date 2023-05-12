@@ -56,7 +56,7 @@ public class RecSys{
         return -1;
     }
 
-    private List<Integer> selectItems(int idxLikedItem, int labelLikedItem, int numRec){
+    private List<Integer> selectItems(int idxLikedItem, Integer labelLikedItem, int numRec){
         //Para el paso 3a de recommend()
         List<Integer> listaIndRec = new ArrayList<>();
         List<Integer> estimaciones = etiquetaEstimada.get(labelLikedItem);
@@ -64,11 +64,10 @@ public class RecSys{
         //El for será numRec a no ser que hayan menos elementos que numRec, si hay menos serán el número de elementos
         System.out.println("cant: "+cant);
         System.out.println("numRec: "+numRec);
-        if (cant>numRec){ cant = numRec;}
-        for(int i= 0; i<cant; i++){
+        for (int i = 0; i<numRec; i++){
             try{
-                if(estimaciones.get(i) == idxLikedItem){ //Si la original, la salta y buscará una más
-                    cant ++;
+                if(estimaciones.get(i) == idxLikedItem){ //Si es la original, la salta y buscará una más
+                    numRec++;
                 }
                 else {
                     listaIndRec.add(estimaciones.get(i)); //Añado a listaIndRec todos los índices de los elementos con la misma etiqueta
@@ -76,7 +75,6 @@ public class RecSys{
             }catch (IndexOutOfBoundsException excepcion){
                 System.out.println();
             }
-
         }
 
         return listaIndRec;
@@ -107,7 +105,7 @@ public class RecSys{
         //List<Double> dato = testData.listaRows.get(idx).getData();
 
         //2) Obtener la etiqueta lbl estimada para dicho elemento
-        int lbl = (int) algorithm.estimate(dato);
+        Integer lbl = (Integer) algorithm.estimate(dato);
 
         //3) Localizar en testData elementos que tengan el mismo lbl, obtener sus nombres
 

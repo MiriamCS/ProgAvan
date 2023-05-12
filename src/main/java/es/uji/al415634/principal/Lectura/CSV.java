@@ -90,7 +90,9 @@ public class CSV {
     public static void main(String[] args) throws IOException, NumeroClusterNoValidoException {
         //Tabla prueba
         CSV csv = new CSV();
-        csv.readTable("src/main/java/es/uji/al415634/Files/face.csv");
+        String sep = System.getProperty("file.separator");
+        String ruta = "src/main/java/es/uji/al415634/Files";
+        csv.readTable(ruta+sep+"face.csv");
         Distance d_eucl = new EuclideanDistance();
         Distance d_man = new ManhattanDistance();
         csv.savePredictions(d_eucl);

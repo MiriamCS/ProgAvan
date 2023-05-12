@@ -9,20 +9,14 @@ import java.util.List;
 public class Controlador implements Grafica{
     public String algoritmo;
     public Distance distancia;
-    private String cancion;
+    public String cancion;
     private int numRecomendaciones;
-    private List<String> recommended_items;
+    public List<String> recommended_items;
 
     @Override
-    public void setRecomendacion(String rec) {this.algoritmo = rec;
-    }
-
+    public void setAlgoritmo(String alg) {this.algoritmo = alg;}
     @Override
-    public void setDistancia(Distance distancia) {
-
-        this.distancia = distancia;
-    }
-
+    public void setDistancia(Distance distancia) {this.distancia = distancia;}
     @Override
     public void setCancion(String cancion) {
         this.cancion=cancion;
@@ -30,25 +24,15 @@ public class Controlador implements Grafica{
 
     @Override
     public void setNumRecomendaciones(int num){this.numRecomendaciones=num;}
+    @Override
+    public int getNumRecomendaciones(){
+        return numRecomendaciones;
+    }
 
     @Override
     public void buscarCancion() throws Exception {
         SongRecSys songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones);
         recommended_items = songRecSys.getReportRecommendation();
-
-    }
-    @Override
-    public int getNumRecomendaciones(){
-        return numRecomendaciones;
-    }
-    @Override
-    public String getCancion(){
-        return cancion;
-    }
-
-    @Override
-    public List<String> getRecommendations(){
-        return  recommended_items;
     }
 
 

@@ -13,6 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -32,10 +33,6 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        start1(primaryStage);
-    }
-
-    public void start1(Stage primaryStage) throws IOException {
         //primera ventana emergente
         primaryStage.setTitle("Song Recommender");
 
@@ -99,9 +96,9 @@ public class MainFX extends Application {
         ToggleGroup grupo1 = new ToggleGroup();
         Label titulo1 = new Label("Recommendation Type");
         RadioButton knn = new RadioButton("Recommended based on song features");
-        knn.setOnAction(e -> controlador.setRecomendacion("knn"));
+        knn.setOnAction(e -> controlador.setAlgoritmo("knn"));
         RadioButton kmeans = new RadioButton("Recommend based on guessed genre");
-        kmeans.setOnAction(e -> controlador.setRecomendacion("kmeans"));
+        kmeans.setOnAction(e -> controlador.setAlgoritmo("kmeans"));
         VBox caja1 = new VBox(titulo1, knn, kmeans);
         //Ajustes de la caja1
         caja1.setSpacing(10);
@@ -149,7 +146,7 @@ public class MainFX extends Application {
     public VBox botonRecommend(Stage primaryStage){
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
-            if(controlador.algoritmo == null || controlador.distancia == null || controlador.getCancion() == null){
+            if(controlador.algoritmo == null || controlador.distancia == null || controlador.cancion == null){
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 String mensaje = "¡¡Falta algo por seleccionar!!";
                 startAlert(alert, mensaje);
@@ -164,8 +161,9 @@ public class MainFX extends Application {
                 } catch (Exception excepcion) {
                     excepcion.printStackTrace();
                 }
-                actualizarDatos(controlador.getRecommendations());
-            }});
+                actualizarDatos(controlador.recommended_items);
+            }
+        });
         VBox caja4 = new VBox(recommend);
         //Ajustes de la caja4
         caja4.setSpacing(10);
@@ -176,7 +174,7 @@ public class MainFX extends Application {
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
         controlador.setNumRecomendaciones(5);
-        Spinner<Integer> spinner = new Spinner<>(1,valueMax,5,1);
+        Spinner<Integer> spinner = new Spinner<>(1,valueMax,5, 1);
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
             controlador.setNumRecomendaciones(valorActual);
@@ -185,8 +183,9 @@ public class MainFX extends Application {
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
-            actualizarDatos(controlador.getRecommendations());
-            if(estado){
+            actualizarDatos(controlador.recommended_items);
+
+            if(estado){ //pide más recomendaciones de las que hay
                 SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,valueMax,valueMax);
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
             }
@@ -200,7 +199,7 @@ public class MainFX extends Application {
     }
 
     public VBox recomendaciones(){
-        siTeGusta = new Label("If you like '"+controlador.getCancion()+"' you might like");
+        siTeGusta = new Label("If you like '"+controlador.cancion+"' you might like");
         ListView<String> lista = new ListView<>(cancionesRecomendadas);
         VBox caja2 = new VBox(siTeGusta,lista);
         //Ajustes de la caja2
@@ -220,7 +219,9 @@ public class MainFX extends Application {
     }
 
     private void addTitleSong(ObservableList<String> lista) throws IOException {
-        BufferedReader buffer = new BufferedReader(new FileReader("src/main/java/es/uji/al415634/Files/songs_test_names.csv"));
+        String sep = System.getProperty("file.separator");
+        String ruta = "src/main/java/es/uji/al415634/Files";
+        BufferedReader buffer = new BufferedReader(new FileReader(ruta+sep+"songs_test_names.csv"));
         String cadena;
         while((cadena= buffer.readLine())!= null){
             lista.add(cadena);

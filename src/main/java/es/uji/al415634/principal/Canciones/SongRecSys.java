@@ -17,12 +17,10 @@ import java.util.Map;
 
 public class SongRecSys {
     private RecSys recsys;
-    private Distance distance;
     private List<String> recommended_items;
 
     public SongRecSys(String method, Distance distance, String cancion, int numRecomendaciones) throws Exception {
         System.out.println(cancion);
-        this.distance = distance;
         String sep = System.getProperty("file.separator");
         String ruta = "src/main/java/es/uji/al415634/Files";
 
