@@ -15,6 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -180,30 +181,20 @@ public class MainFX extends Application {
         //Prueba
         controlador.setNumRecomendaciones(5);
         Spinner<Integer> spinner = new Spinner<>(1,valueMax,5, 1);
+        spinner.setRepeatDelay(Duration.INDEFINITE);
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
-            //Creamos un temporizador
-            Timer temporizador = new Timer();
-
-            //Ver si hay actividad durante 0.2 seg
-            temporizador.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    Platform.runLater(()->{
-                        controlador.setNumRecomendaciones(valorActual);
-                        try {
-                            controlador.buscarCancion();
-                        } catch (Exception excepcion) {
-                            excepcion.printStackTrace();
-                        }
-                        actualizarDatos(controlador.recommended_items);
-                        if(estado){ //pide más recomendaciones de las que hay
-                            SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,valueMax,valueMax);
-                            spinner.valueFactoryProperty().setValue(valoresNuevos);
-                        }
-                    });
-                }
-            },50);
+            controlador.setNumRecomendaciones(valorActual);
+            try {
+                controlador.buscarCancion();
+            } catch (Exception excepcion) {
+                excepcion.printStackTrace();
+            }
+            actualizarDatos(controlador.recommended_items);
+            if(estado) { //pide más recomendaciones de las que hay
+                SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, valueMax, valueMax);
+                spinner.valueFactoryProperty().setValue(valoresNuevos);
+            }
         });
         HBox caja1 = new HBox(titulo1, spinner);
         //Ajustes caja1
