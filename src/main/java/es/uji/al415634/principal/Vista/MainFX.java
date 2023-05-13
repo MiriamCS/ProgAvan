@@ -4,6 +4,7 @@ import es.uji.al415634.principal.Controlador.Controlador;
 import es.uji.al415634.principal.Modelo.Distancia.EuclideanDistance;
 import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -19,6 +20,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
@@ -174,22 +177,34 @@ public class MainFX extends Application {
 
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
+        //Prueba
         controlador.setNumRecomendaciones(5);
         Spinner<Integer> spinner = new Spinner<>(1,valueMax,5, 1);
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
-            controlador.setNumRecomendaciones(valorActual);
-            try {
-                controlador.buscarCancion();
-            } catch (Exception excepcion) {
-                excepcion.printStackTrace();
-            }
-            actualizarDatos(controlador.recommended_items);
+            //Creamos un temporizador
+            Timer temporizador = new Timer();
 
-            if(estado){ //pide más recomendaciones de las que hay
-                SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,valueMax,valueMax);
-                spinner.valueFactoryProperty().setValue(valoresNuevos);
-            }
+            //Ver si hay actividad durante 0.2 seg
+            temporizador.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    Platform.runLater(()->{
+                        controlador.setNumRecomendaciones(valorActual);
+                        try {
+                            controlador.buscarCancion();
+                        } catch (Exception excepcion) {
+                            excepcion.printStackTrace();
+                        }
+                        if(estado){ //pide más recomendaciones de las que hay
+                            SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,valueMax,valueMax);
+                            spinner.valueFactoryProperty().setValue(valoresNuevos);
+                        }
+                        actualizarDatos(controlador.recommended_items);
+                    });
+                }
+            },200);
+
         });
         HBox caja1 = new HBox(titulo1, spinner);
         //Ajustes caja1
