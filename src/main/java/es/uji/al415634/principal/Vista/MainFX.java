@@ -196,15 +196,14 @@ public class MainFX extends Application {
                         } catch (Exception excepcion) {
                             excepcion.printStackTrace();
                         }
+                        actualizarDatos(controlador.recommended_items);
                         if(estado){ //pide más recomendaciones de las que hay
                             SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,valueMax,valueMax);
                             spinner.valueFactoryProperty().setValue(valoresNuevos);
                         }
-                        actualizarDatos(controlador.recommended_items);
                     });
                 }
             },200);
-
         });
         HBox caja1 = new HBox(titulo1, spinner);
         //Ajustes caja1
