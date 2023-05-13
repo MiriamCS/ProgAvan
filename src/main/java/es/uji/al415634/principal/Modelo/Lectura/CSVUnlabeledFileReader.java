@@ -11,8 +11,8 @@ import java.util.List;
 
 public class CSVUnlabeledFileReader extends ReaderTemplate<Table> {
     public int tam;
-    public BufferedReader buffer;
-    public String cadena; //Leer nuevos datos
+    private BufferedReader buffer;
+    private String cadena; //Leer nuevos datos
 
     public CSVUnlabeledFileReader(String nombreFichero) {
         super(nombreFichero);

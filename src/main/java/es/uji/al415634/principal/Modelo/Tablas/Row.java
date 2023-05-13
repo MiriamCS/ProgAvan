@@ -3,7 +3,7 @@ package es.uji.al415634.principal.Modelo.Tablas;
 import java.util.List;
 
 public class Row {
-    public List<Double> data;
+    private List<Double> data;
 
     //Constructor
     public Row(List<Double> data){

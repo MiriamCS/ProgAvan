@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TableWithLabels extends Table {
-    public Map<String, Integer> labelsToIndex;
+    private Map<String, Integer> labelsToIndex;
 
     //Constructor
     public TableWithLabels(){

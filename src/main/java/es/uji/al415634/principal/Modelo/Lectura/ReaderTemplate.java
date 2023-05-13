@@ -5,7 +5,7 @@ import es.uji.al415634.principal.Modelo.Tablas.Table;
 import java.io.IOException;
 
 public abstract class ReaderTemplate<T extends Table>{
-    public  String source;
+    private String source;
     public  T tabla;
     //Constructor
     public ReaderTemplate(String nombreFichero){

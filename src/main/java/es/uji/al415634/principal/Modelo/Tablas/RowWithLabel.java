@@ -3,7 +3,7 @@ package es.uji.al415634.principal.Modelo.Tablas;
 import java.util.List;
 
 public class RowWithLabel extends Row{
-    public int numberClass;
+    private int numberClass;
 
     //Constructor
     public RowWithLabel(List<Double> data, int numberClass){

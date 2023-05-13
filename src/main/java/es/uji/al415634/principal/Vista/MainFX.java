@@ -25,7 +25,7 @@ import java.util.TimerTask;
 
 public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
-    public static Controlador controlador = new Controlador();
+    private static Controlador controlador = new Controlador();
     private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
     private boolean estado=false;
     private int valueMax=100;
@@ -203,7 +203,7 @@ public class MainFX extends Application {
                         }
                     });
                 }
-            },200);
+            },50);
         });
         HBox caja1 = new HBox(titulo1, spinner);
         //Ajustes caja1

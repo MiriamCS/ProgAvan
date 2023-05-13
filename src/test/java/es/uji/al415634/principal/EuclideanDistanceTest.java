@@ -17,12 +17,13 @@ class EuclideanDistanceTest {
     private final double[] vect4 = {2.2,3.0,4.1,1.3};
     private final double[] vect5 = {0.0,0.0,0.0,0.0};
     private final List<Double> sample = new ArrayList<>();
-    Distance distance = new EuclideanDistance();
-    KNN knn = new KNN(distance);
-    List<Double> lista = new ArrayList<>();
 
     @Test
     void calculateDistance() {
+        Distance distance = new EuclideanDistance();
+        KNN knn = new KNN(distance);
+        List<Double> lista = new ArrayList<>();
+
         for (double elem: s1){sample.add(elem);}
         //prueba 1
         for (double elem: vect2){lista.add(elem);}
