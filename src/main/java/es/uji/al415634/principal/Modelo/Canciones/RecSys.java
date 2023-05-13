@@ -60,10 +60,8 @@ public class RecSys{
         //Para el paso 3a de recommend()
         List<Integer> listaIndRec = new ArrayList<>();
         List<Integer> estimaciones = etiquetaEstimada.get(labelLikedItem);
-        int cant= estimaciones.size();
+        //int cant= estimaciones.size();
         //El for será numRec a no ser que hayan menos elementos que numRec, si hay menos serán el número de elementos
-        System.out.println("cant: "+cant);
-        System.out.println("numRec: "+numRec);
         for (int i = 0; i<numRec; i++){
             try{
                 if(estimaciones.get(i) == idxLikedItem){ //Si es la original, la salta y buscará una más

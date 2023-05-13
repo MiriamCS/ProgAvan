@@ -1,4 +1,4 @@
-package es.uji.al415634.principal.Vista;
+package es.uji.al415634.principal.Controlador;
 
 import es.uji.al415634.principal.Modelo.Distancia.Distance;
 

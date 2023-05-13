@@ -243,7 +243,6 @@ public class MainFX extends Application {
     }
 
     private void actualizarDatos(List<String> lista){
-        System.out.println(lista.size());
         cancionesRecomendadas.clear();
         cancionesRecomendadas.addAll(lista);
         //Si el número de elementos es menor que numRec...

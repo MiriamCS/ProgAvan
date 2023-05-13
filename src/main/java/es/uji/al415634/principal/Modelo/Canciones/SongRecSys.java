@@ -20,7 +20,6 @@ public class SongRecSys {
     private List<String> recommended_items;
 
     public SongRecSys(String method, Distance distance, String cancion, int numRecomendaciones) throws Exception {
-        System.out.println(cancion);
         String sep = System.getProperty("file.separator");
         String ruta = "src/main/java/es/uji/al415634/Files";
 

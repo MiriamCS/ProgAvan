@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Con tiempos">
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Lo vuelvo a subir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Vista/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Vista/MainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/SongRecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Vista/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador/Grafica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +40,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -45,7 +49,7 @@
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Controlador.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -60,7 +64,7 @@
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Controlador.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,7 +79,7 @@
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Controlador.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,7 +94,7 @@
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Controlador.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,7 +109,7 @@
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Controlador.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683993787678</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Lo vuelvo a subir">
+      <created>1683995241699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683995241699</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,7 +209,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Carpetas :D" />
     <MESSAGE value="Con tiempos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Con tiempos" />
+    <MESSAGE value="Lo vuelvo a subir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lo vuelvo a subir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
