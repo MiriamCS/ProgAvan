@@ -1,8 +1,8 @@
 package es.uji.al415634.principal;
 
-import es.uji.al415634.principal.Algoritmos.KNN;
-import es.uji.al415634.principal.Distancia.Distance;
-import es.uji.al415634.principal.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.Modelo.Algoritmos.KNN;
+import es.uji.al415634.principal.Modelo.Distancia.Distance;
+import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

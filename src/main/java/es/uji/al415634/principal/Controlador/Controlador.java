@@ -1,12 +1,13 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Controlador;
 
 
-import es.uji.al415634.principal.Canciones.SongRecSys;
-import es.uji.al415634.principal.Distancia.Distance;
+import es.uji.al415634.principal.Modelo.Canciones.SongRecSys;
+import es.uji.al415634.principal.Modelo.Distancia.Distance;
+import es.uji.al415634.principal.Vista.Grafica;
 
 import java.util.List;
 
-public class Controlador implements Grafica{
+public class Controlador implements Grafica {
     public String algoritmo;
     public Distance distancia;
     public String cancion;

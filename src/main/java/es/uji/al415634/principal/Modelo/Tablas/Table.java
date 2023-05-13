@@ -1,6 +1,4 @@
-package es.uji.al415634.principal.Tablas;
-
-import es.uji.al415634.principal.Tablas.Row;
+package es.uji.al415634.principal.Modelo.Tablas;
 
 import java.util.ArrayList;
 import java.util.List;

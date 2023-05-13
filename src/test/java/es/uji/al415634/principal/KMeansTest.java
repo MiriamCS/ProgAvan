@@ -1,13 +1,13 @@
 package es.uji.al415634.principal;
 
-import es.uji.al415634.principal.Algoritmos.KMeans;
-import es.uji.al415634.principal.Distancia.Distance;
-import es.uji.al415634.principal.Distancia.EuclideanDistance;
-import es.uji.al415634.principal.Distancia.ManhattanDistance;
-import es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException;
-import es.uji.al415634.principal.Lectura.CSVUnlabeledFileReader;
-import es.uji.al415634.principal.Lectura.ReaderTemplate;
-import es.uji.al415634.principal.Tablas.Table;
+import es.uji.al415634.principal.Modelo.Algoritmos.KMeans;
+import es.uji.al415634.principal.Modelo.Distancia.Distance;
+import es.uji.al415634.principal.Modelo.Distancia.EuclideanDistance;
+import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.Modelo.Excepcion.NumeroClusterNoValidoException;
+import es.uji.al415634.principal.Modelo.Lectura.CSVUnlabeledFileReader;
+import es.uji.al415634.principal.Modelo.Lectura.ReaderTemplate;
+import es.uji.al415634.principal.Modelo.Tablas.Table;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

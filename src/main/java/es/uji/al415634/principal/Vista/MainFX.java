@@ -1,7 +1,8 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Vista;
 
-import es.uji.al415634.principal.Distancia.EuclideanDistance;
-import es.uji.al415634.principal.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.Controlador.Controlador;
+import es.uji.al415634.principal.Modelo.Distancia.EuclideanDistance;
+import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -190,7 +191,6 @@ public class MainFX extends Application {
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
             }
         });
-
         HBox caja1 = new HBox(titulo1, spinner);
         //Ajustes caja1
         caja1.setSpacing(10);

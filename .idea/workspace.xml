@@ -4,13 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="Falta arreglar cosas... en general funciona :)">
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/RecSys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/SongRecSys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Grafica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Algoritmos/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Algoritmos/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Algoritmos/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Canciones/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/SongRecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/Distance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Distancia/Distance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/DistanceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Distancia/DistanceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/EuclideanDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Distancia/EuclideanDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Distancia/ManhattanDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Distancia/ManhattanDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Excepcion/NumeroClusterNoValidoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Excepcion/NumeroClusterNoValidoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Grafica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Vista/Grafica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Lectura/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSVLabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Lectura/CSVLabeledFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/CSVUnlabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Lectura/CSVUnlabeledFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Lectura/ReaderTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Lectura/ReaderTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Vista/MainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Tablas/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/RowWithLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Tablas/RowWithLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Tablas/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Tablas/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Tablas/TableWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/CSVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/EuclideanDistanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KMeansTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/al415634/principal/ManhattanDistanceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -38,16 +61,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="Application.MainFX">
-    <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.MainFX" />
-      <module name="ProgAvan" />
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="JUnit.ManhattanDistanceTest">
+    <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.CSVTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EuclideanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.EuclideanDistanceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -56,7 +101,7 @@
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -67,34 +112,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KMeansTest.asignar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KMeansTest" />
-      <option name="METHOD_NAME" value="asignar" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KMeansTest.train" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pr1y2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji.al415634.principal" />
-      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KMeansTest" />
-      <option name="METHOD_NAME" value="train" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.al415634.principal.KNNTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,7 +131,7 @@
       <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.al415634.principal.*" />
+          <option name="PATTERN" value="es.uji.al415634.principal.Vista.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainFX" />
-        <item itemvalue="JUnit.KMeansTest" />
-        <item itemvalue="JUnit.KMeansTest.asignar" />
-        <item itemvalue="JUnit.KMeansTest.train" />
         <item itemvalue="JUnit.ManhattanDistanceTest" />
+        <item itemvalue="JUnit.KNNTest" />
+        <item itemvalue="JUnit.KMeansTest" />
+        <item itemvalue="JUnit.EuclideanDistanceTest" />
+        <item itemvalue="JUnit.CSVTest" />
       </list>
     </recent_temporary>
   </component>
@@ -147,7 +175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683587122809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Pequeños arreglos, no he tocado spinner">
+      <created>1683748914810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683748914810</updated>
+    </task>
+    <task id="LOCAL-00004" summary=".">
+      <created>1683751512260</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683751512260</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,7 +206,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="No sé si estará bien" />
     <MESSAGE value="Falta arreglar cosas... en general funciona :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Falta arreglar cosas... en general funciona :)" />
+    <MESSAGE value="Pequeños arreglos, no he tocado spinner" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -187,6 +231,10 @@
           </properties>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException" package="es.uji.al415634.principal.Excepcion" />
+          <option name="timeStamp" value="11" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

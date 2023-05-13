@@ -1,8 +1,8 @@
-package es.uji.al415634.principal.Lectura;
+package es.uji.al415634.principal.Modelo.Lectura;
 
-import es.uji.al415634.principal.Tablas.RowWithLabel;
-import es.uji.al415634.principal.Tablas.Table;
-import es.uji.al415634.principal.Tablas.TableWithLabels;
+import es.uji.al415634.principal.Modelo.Tablas.RowWithLabel;
+import es.uji.al415634.principal.Modelo.Tablas.Table;
+import es.uji.al415634.principal.Modelo.Tablas.TableWithLabels;
 
 import java.util.ArrayList;
 import java.util.List;

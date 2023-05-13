@@ -1,6 +1,6 @@
-package es.uji.al415634.principal;
+package es.uji.al415634.principal.Vista;
 
-import es.uji.al415634.principal.Distancia.Distance;
+import es.uji.al415634.principal.Modelo.Distancia.Distance;
 
 public interface Grafica {
     void setAlgoritmo(String alg);

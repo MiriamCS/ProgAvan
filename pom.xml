@@ -24,7 +24,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.3</version>
                 <configuration>
-                    <mainClass>es.uji.al415634.principal.MainFX</mainClass>
+                    <mainClass>es.uji.al415634.principal.Vista.MainFX</mainClass>
                 </configuration>
             </plugin>
         </plugins>

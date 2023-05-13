@@ -1,8 +1,8 @@
-package es.uji.al415634.principal.Canciones;
+package es.uji.al415634.principal.Modelo.Canciones;
 
-import es.uji.al415634.principal.Algoritmos.Algorithm;
-import es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException;
-import es.uji.al415634.principal.Tablas.Table;
+import es.uji.al415634.principal.Modelo.Algoritmos.Algorithm;
+import es.uji.al415634.principal.Modelo.Excepcion.NumeroClusterNoValidoException;
+import es.uji.al415634.principal.Modelo.Tablas.Table;
 
 import java.util.*;
 

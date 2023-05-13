@@ -1,10 +1,10 @@
-package es.uji.al415634.principal.Algoritmos;
+package es.uji.al415634.principal.Modelo.Algoritmos;
 
-import es.uji.al415634.principal.Distancia.Distance;
-import es.uji.al415634.principal.Distancia.DistanceClient;
-import es.uji.al415634.principal.Excepcion.NumeroClusterNoValidoException;
-import es.uji.al415634.principal.Tablas.Row;
-import es.uji.al415634.principal.Tablas.Table;
+import es.uji.al415634.principal.Modelo.Distancia.Distance;
+import es.uji.al415634.principal.Modelo.Distancia.DistanceClient;
+import es.uji.al415634.principal.Modelo.Excepcion.NumeroClusterNoValidoException;
+import es.uji.al415634.principal.Modelo.Tablas.Row;
+import es.uji.al415634.principal.Modelo.Tablas.Table;
 
 import java.util.*;
 
