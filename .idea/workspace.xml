@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="publics innecesarios a privates&#10;delay cambiado">
+    <list default="true" id="24e2a3f0-b577-4a24-9627-127ead9c9404" name="Changes" comment="sin sout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Modelo/Canciones/SongRecSys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Vista/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/al415634/principal/Vista/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,9 +42,9 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.ManhattanDistanceTest (1)">
-    <configuration name="CSVTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+  <component name="RunManager" selected="JUnit.ManhattanDistanceTest">
+    <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -56,8 +58,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EuclideanDistanceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="EuclideanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -71,8 +73,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KMeansTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="KMeansTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -86,8 +88,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KNNTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -101,8 +103,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ManhattanDistanceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvan" />
+    <configuration name="ManhattanDistanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pr1y2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="es.uji.al415634.principal.*" />
@@ -118,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ManhattanDistanceTest (1)" />
-        <item itemvalue="JUnit.KNNTest (1)" />
-        <item itemvalue="JUnit.KMeansTest (1)" />
-        <item itemvalue="JUnit.EuclideanDistanceTest (1)" />
-        <item itemvalue="JUnit.CSVTest (1)" />
+        <item itemvalue="JUnit.ManhattanDistanceTest" />
+        <item itemvalue="JUnit.KNNTest" />
+        <item itemvalue="JUnit.KMeansTest" />
+        <item itemvalue="JUnit.EuclideanDistanceTest" />
+        <item itemvalue="JUnit.CSVTest" />
       </list>
     </recent_temporary>
   </component>
@@ -177,14 +179,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683993787678</updated>
     </task>
-    <task id="LOCAL-00007" summary="publics innecesarios a privates&#10;delay cambiado">
-      <created>1684001279531</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1684001279531</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,9 +200,7 @@
     <MESSAGE value="." />
     <MESSAGE value="Carpetas :D" />
     <MESSAGE value="Con tiempos" />
-    <MESSAGE value="publics innecesarios a privates" />
-    <MESSAGE value="publics innecesarios a privates&#10;delay cambiado" />
-    <option name="LAST_COMMIT_MESSAGE" value="publics innecesarios a privates&#10;delay cambiado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Con tiempos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

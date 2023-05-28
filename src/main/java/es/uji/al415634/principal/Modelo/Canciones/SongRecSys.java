@@ -48,10 +48,12 @@ public class SongRecSys {
         // Names of items
         List<String> names = readNames(ruta+sep+"songs_test_names.csv");
 
-        // Start the RecSys
+        //Esto solo debería ejecutarse una vez
+
         this.recsys = new RecSys(algorithms.get(method));
         this.recsys.train(tables.get(method+"train"));
         this.recsys.run(tables.get(method+"test"), names);
+
 
         // Given a liked item, ask for a number of recomendations
         List<String> recommended_items = this.recsys.recommend(cancion,numRecomendaciones);

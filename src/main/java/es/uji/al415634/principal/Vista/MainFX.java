@@ -4,7 +4,6 @@ import es.uji.al415634.principal.Controlador.Controlador;
 import es.uji.al415634.principal.Modelo.Distancia.EuclideanDistance;
 import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -21,12 +20,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
-    private static Controlador controlador = new Controlador();
+    //Modificado
+    private Stage primaryStage;
+    private final Controlador controlador = new Controlador();
     private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
     private boolean estado=false;
     private int valueMax=100;
@@ -38,6 +37,7 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        this.primaryStage=primaryStage;
         //primera ventana emergente
         primaryStage.setTitle("Song Recommender");
 
@@ -178,7 +178,6 @@ public class MainFX extends Application {
 
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
-        //Prueba
         controlador.setNumRecomendaciones(5);
         Spinner<Integer> spinner = new Spinner<>(1,valueMax,5, 1);
         spinner.setRepeatDelay(Duration.INDEFINITE);
@@ -215,7 +214,12 @@ public class MainFX extends Application {
 
     public VBox botonClose(){
         Button close = new Button("Close");
-        close.setOnAction(e ->secondaryStage.close());
+        //close.setOnAction(e ->secondaryStage.close());
+        close.setOnAction(e ->{
+            secondaryStage.close();
+            //Modificado
+            primaryStage.show();
+        });
         VBox caja3 = new VBox(close);
         //Ajustes de la caja4
         caja3.setSpacing(10);
