@@ -149,12 +149,12 @@ public class MainFX extends Application {
     public VBox botonRecommend(Stage primaryStage){
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
-            if(controlador.algoritmo == null || controlador.distancia == null || controlador.cancion == null){
+            if( controlador.getAlgoritmo() == null || controlador.getDistancia() == null || controlador.getCancion() == null){
                 String faltaSeleccionar;
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                if(controlador.algoritmo==null){
+                if(controlador.getAlgoritmo()==null){
                     faltaSeleccionar="RECOMMENDATION TYPE";
-                }else if(controlador.distancia==null){
+                }else if(controlador.getDistancia()==null){
                     faltaSeleccionar="DISTANCE TYPE";
                 }else{
                     faltaSeleccionar="SONG TITLE";
@@ -212,7 +212,7 @@ public class MainFX extends Application {
     }
 
     public VBox recomendaciones(){
-        siTeGusta = new Label("If you like '"+controlador.cancion+"' you might like");
+        siTeGusta = new Label("If you like '"+controlador.getCancion()+"' you might like");
         ListView<String> lista = new ListView<>(cancionesRecomendadas);
         VBox caja2 = new VBox(siTeGusta,lista);
         //Ajustes de la caja2

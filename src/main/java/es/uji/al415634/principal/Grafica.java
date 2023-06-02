@@ -1,4 +1,4 @@
-package es.uji.al415634.principal.controlador;
+package es.uji.al415634.principal;
 
 import es.uji.al415634.principal.modelo.distancia.Distance;
 import javafx.collections.ObservableList;
@@ -10,10 +10,11 @@ public interface Grafica {
     void setAlgoritmo(String alg);
     void setDistancia(Distance distancia);
     void setCancion(String texto);
-    void setNumRecomendaciones(int num) throws Exception;
-    //void buscarCancion()throws  Exception;
+    String getAlgoritmo();
+    Distance getDistancia();
+    String getCancion();
     int getNumRecomendaciones() throws Exception;
-    //Nuevo
+    void setNumRecomendaciones(int num) throws Exception;
     List<String> getRecommendedItems();
     ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException;
 }
