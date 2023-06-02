@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Modelo implements Grafica {
@@ -16,6 +17,8 @@ public class Modelo implements Grafica {
     private String cancion;
     private int numRecomendaciones;
     private List<String> recommendedItems;
+    private int numBuscadas=0;
+    private List<String> recommendedBuscadas;
 
     @Override
     public void setAlgoritmo(String alg) {this.algoritmo = alg;}
@@ -45,8 +48,16 @@ public class Modelo implements Grafica {
         return recommendedItems;
     }
     public void buscarCancion() throws Exception {
-        SongRecSys songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones);
-        recommendedItems = songRecSys.getReportRecommendation();
+        SongRecSys songRecSys;
+        if (numRecomendaciones > numBuscadas) {
+            songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones+10);
+            recommendedBuscadas = songRecSys.getReportRecommendation();
+        }
+        recommendedItems = new ArrayList<>();
+        for (int i= 0; i<numRecomendaciones; i++){
+            recommendedItems.add(recommendedBuscadas.get(i));
+        }
+        numBuscadas= numRecomendaciones +10;
     }
     @Override
     public ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException {
