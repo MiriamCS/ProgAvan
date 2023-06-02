@@ -1,4 +1,4 @@
-package es.uji.al415634.principal.Modelo.Tablas;
+package es.uji.al415634.principal.modelo.tablas;
 
 import java.util.List;
 

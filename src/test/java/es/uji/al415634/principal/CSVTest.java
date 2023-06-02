@@ -1,8 +1,8 @@
 package es.uji.al415634.principal;
 
-import es.uji.al415634.principal.Modelo.Lectura.CSV;
-import es.uji.al415634.principal.Modelo.Tablas.RowWithLabel;
-import es.uji.al415634.principal.Modelo.Tablas.TableWithLabels;
+import es.uji.al415634.principal.modelo.lectura.CSV;
+import es.uji.al415634.principal.modelo.tablas.RowWithLabel;
+import es.uji.al415634.principal.modelo.tablas.TableWithLabels;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

@@ -1,10 +1,10 @@
-package es.uji.al415634.principal.Modelo.Algoritmos;
+package es.uji.al415634.principal.modelo.algoritmos;
 
-import es.uji.al415634.principal.Modelo.Distancia.Distance;
-import es.uji.al415634.principal.Modelo.Distancia.DistanceClient;
-import es.uji.al415634.principal.Modelo.Tablas.RowWithLabel;
-import es.uji.al415634.principal.Modelo.Tablas.Table;
-import es.uji.al415634.principal.Modelo.Tablas.TableWithLabels;
+import es.uji.al415634.principal.modelo.distancia.Distance;
+import es.uji.al415634.principal.modelo.distancia.DistanceClient;
+import es.uji.al415634.principal.modelo.tablas.RowWithLabel;
+import es.uji.al415634.principal.modelo.tablas.Table;
+import es.uji.al415634.principal.modelo.tablas.TableWithLabels;
 
 import java.util.List;
 

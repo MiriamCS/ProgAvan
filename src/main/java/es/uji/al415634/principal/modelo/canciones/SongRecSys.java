@@ -1,11 +1,11 @@
-package es.uji.al415634.principal.Modelo.Canciones;
+package es.uji.al415634.principal.modelo.canciones;
 
-import es.uji.al415634.principal.Modelo.Algoritmos.Algorithm;
-import es.uji.al415634.principal.Modelo.Algoritmos.KMeans;
-import es.uji.al415634.principal.Modelo.Algoritmos.KNN;
-import es.uji.al415634.principal.Modelo.Distancia.Distance;
-import es.uji.al415634.principal.Modelo.Lectura.CSV;
-import es.uji.al415634.principal.Modelo.Tablas.Table;
+import es.uji.al415634.principal.modelo.algoritmos.Algorithm;
+import es.uji.al415634.principal.modelo.algoritmos.KMeans;
+import es.uji.al415634.principal.modelo.algoritmos.KNN;
+import es.uji.al415634.principal.modelo.distancia.Distance;
+import es.uji.al415634.principal.modelo.lectura.CSV;
+import es.uji.al415634.principal.modelo.tablas.Table;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,13 +1,13 @@
 package es.uji.al415634.principal;
 
-import es.uji.al415634.principal.Modelo.Algoritmos.KNN;
-import es.uji.al415634.principal.Modelo.Distancia.Distance;
-import es.uji.al415634.principal.Modelo.Distancia.EuclideanDistance;
-import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
-import es.uji.al415634.principal.Modelo.Lectura.CSVLabeledFileReader;
-import es.uji.al415634.principal.Modelo.Lectura.ReaderTemplate;
-import es.uji.al415634.principal.Modelo.Tablas.Table;
-import es.uji.al415634.principal.Modelo.Tablas.TableWithLabels;
+import es.uji.al415634.principal.modelo.algoritmos.KNN;
+import es.uji.al415634.principal.modelo.distancia.Distance;
+import es.uji.al415634.principal.modelo.distancia.EuclideanDistance;
+import es.uji.al415634.principal.modelo.distancia.ManhattanDistance;
+import es.uji.al415634.principal.modelo.lectura.CSVLabeledFileReader;
+import es.uji.al415634.principal.modelo.lectura.ReaderTemplate;
+import es.uji.al415634.principal.modelo.tablas.Table;
+import es.uji.al415634.principal.modelo.tablas.TableWithLabels;
 
 import java.io.IOException;
 import java.util.ArrayList;

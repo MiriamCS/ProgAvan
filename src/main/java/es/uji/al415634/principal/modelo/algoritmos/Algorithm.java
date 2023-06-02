@@ -1,7 +1,7 @@
-package es.uji.al415634.principal.Modelo.Algoritmos;
+package es.uji.al415634.principal.modelo.algoritmos;
 
-import es.uji.al415634.principal.Modelo.Excepcion.NumeroClusterNoValidoException;
-import es.uji.al415634.principal.Modelo.Tablas.Table;
+import es.uji.al415634.principal.modelo.NumeroClusterNoValidoException;
+import es.uji.al415634.principal.modelo.tablas.Table;
 
 import java.util.List;
 

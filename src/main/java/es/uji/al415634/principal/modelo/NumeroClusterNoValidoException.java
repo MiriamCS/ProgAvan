@@ -1,4 +1,4 @@
-package es.uji.al415634.principal.Modelo.Excepcion;
+package es.uji.al415634.principal.modelo;
 
 public class NumeroClusterNoValidoException extends Exception{
     public NumeroClusterNoValidoException(){

@@ -1,8 +1,8 @@
-package es.uji.al415634.principal.Vista;
+package es.uji.al415634.principal.vista;
 
-import es.uji.al415634.principal.Controlador.Controlador;
-import es.uji.al415634.principal.Modelo.Distancia.EuclideanDistance;
-import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
+import es.uji.al415634.principal.controlador.Controlador;
+import es.uji.al415634.principal.modelo.distancia.EuclideanDistance;
+import es.uji.al415634.principal.modelo.distancia.ManhattanDistance;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,8 +16,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
@@ -137,7 +135,7 @@ public class MainFX extends Application {
         Label titulo3 = new Label("Song Titles");
         ObservableList<String> canciones = FXCollections.observableArrayList();
         //Añadir titulos de canciones
-        addTitleSong(canciones);
+        controlador.getTitleSong(canciones);
         //Poner el scrollPanel
         ListView<String> lista = new ListView<>(canciones);
         lista.getSelectionModel().selectedItemProperty().addListener((item, valorInicial, valorActual) -> controlador.setCancion(valorActual));
@@ -152,8 +150,16 @@ public class MainFX extends Application {
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
             if(controlador.algoritmo == null || controlador.distancia == null || controlador.cancion == null){
+                String faltaSeleccionar;
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                String mensaje = "¡¡Falta algo por seleccionar!!";
+                if(controlador.algoritmo==null){
+                    faltaSeleccionar="RECOMMENDATION TYPE";
+                }else if(controlador.distancia==null){
+                    faltaSeleccionar="DISTANCE TYPE";
+                }else{
+                    faltaSeleccionar="SONG TITLE";
+                }
+                String mensaje = "¡¡Falta seleccionar el apartado: " + faltaSeleccionar + "!!";
                 startAlert(alert, mensaje);
                 alert.show();
             }
@@ -162,11 +168,13 @@ public class MainFX extends Application {
                 secondaryStage.show();
                 primaryStage.close();
                 try {
-                    controlador.buscarCancion();
+                    //controlador.buscarCancion();
+                    controlador.setNumRecomendaciones(5);
                 } catch (Exception excepcion) {
                     excepcion.printStackTrace();
                 }
-                actualizarDatos(controlador.recommended_items);
+                List<String> lista = controlador.getRecommendedItems();
+                actualizarDatos(lista);
             }
         });
         VBox caja4 = new VBox(recommend);
@@ -178,18 +186,19 @@ public class MainFX extends Application {
 
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
-        controlador.setNumRecomendaciones(5);
         Spinner<Integer> spinner = new Spinner<>(1,valueMax,5, 1);
         spinner.setRepeatDelay(Duration.INDEFINITE);
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
-            controlador.setNumRecomendaciones(valorActual);
+            //controlador.setNumRecomendaciones(valorActual);
             try {
-                controlador.buscarCancion();
+                //controlador.buscarCancion();
+                controlador.setNumRecomendaciones(valorActual);
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
-            actualizarDatos(controlador.recommended_items);
+            List<String> lista = controlador.getRecommendedItems();
+            actualizarDatos(lista);
             if(estado) { //pide más recomendaciones de las que hay
                 SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, valueMax, valueMax);
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
@@ -227,16 +236,6 @@ public class MainFX extends Application {
         return caja3;
     }
 
-    private void addTitleSong(ObservableList<String> lista) throws IOException {
-        String sep = System.getProperty("file.separator");
-        String ruta = "src/main/java/es/uji/al415634/Files";
-        BufferedReader buffer = new BufferedReader(new FileReader(ruta+sep+"songs_test_names.csv"));
-        String cadena;
-        while((cadena= buffer.readLine())!= null){
-            lista.add(cadena);
-        }
-    }
-
     private void actualizarDatos(List<String> lista){
         cancionesRecomendadas.clear();
         cancionesRecomendadas.addAll(lista);
@@ -247,7 +246,11 @@ public class MainFX extends Application {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             String mensaje = "No hay "+ controlador.getNumRecomendaciones() +" recomendaciones, solo hay "+ lista.size() +" recomendaciones disponibles";
             startAlert(alert, mensaje);
-            controlador.setNumRecomendaciones(lista.size());
+            try{
+                controlador.setNumRecomendaciones(lista.size());
+            } catch (Exception excepcion) {
+                excepcion.printStackTrace();
+            }
             alert.show();
         }else{
             estado=false;

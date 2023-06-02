@@ -1,13 +1,13 @@
-package es.uji.al415634.principal.Modelo.Lectura;
+package es.uji.al415634.principal.modelo.lectura;
 
-import es.uji.al415634.principal.Modelo.Distancia.Distance;
-import es.uji.al415634.principal.Modelo.Distancia.EuclideanDistance;
-import es.uji.al415634.principal.Modelo.Distancia.ManhattanDistance;
-import es.uji.al415634.principal.Modelo.Algoritmos.KMeans;
-import es.uji.al415634.principal.Modelo.Excepcion.NumeroClusterNoValidoException;
-import es.uji.al415634.principal.Modelo.Tablas.TableWithLabels;
-import es.uji.al415634.principal.Modelo.Tablas.Row;
-import es.uji.al415634.principal.Modelo.Tablas.Table;
+import es.uji.al415634.principal.modelo.distancia.Distance;
+import es.uji.al415634.principal.modelo.distancia.EuclideanDistance;
+import es.uji.al415634.principal.modelo.distancia.ManhattanDistance;
+import es.uji.al415634.principal.modelo.algoritmos.KMeans;
+import es.uji.al415634.principal.modelo.NumeroClusterNoValidoException;
+import es.uji.al415634.principal.modelo.tablas.TableWithLabels;
+import es.uji.al415634.principal.modelo.tablas.Row;
+import es.uji.al415634.principal.modelo.tablas.Table;
 
 import java.io.FileWriter;
 import java.io.IOException;

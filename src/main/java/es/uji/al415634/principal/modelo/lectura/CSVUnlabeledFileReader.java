@@ -1,7 +1,7 @@
-package es.uji.al415634.principal.Modelo.Lectura;
+package es.uji.al415634.principal.modelo.lectura;
 
-import es.uji.al415634.principal.Modelo.Tablas.Row;
-import es.uji.al415634.principal.Modelo.Tablas.Table;
+import es.uji.al415634.principal.modelo.tablas.Row;
+import es.uji.al415634.principal.modelo.tablas.Table;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
