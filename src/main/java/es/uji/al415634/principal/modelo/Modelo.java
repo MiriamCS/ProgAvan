@@ -79,6 +79,7 @@ public class Modelo implements Grafica {
         for (int i= 0; i<limite; i++){
             recommendedItems.add(recommendedBuscadas.get(i));
         }
+        //Comentario para volver hacer el commit
         numBuscadas= numRecomendaciones +10;
     }
     @Override
