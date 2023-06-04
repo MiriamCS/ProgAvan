@@ -71,6 +71,9 @@ public class Modelo implements Grafica {
             recommendedBuscadas = songRecSys.getReportRecommendation();
         }
         recommendedItems = new ArrayList<>();
+        if(numRecomendaciones > recommendedBuscadas.size()){
+            numRecomendaciones = recommendedBuscadas.size();
+        }
         for (int i= 0; i<numRecomendaciones; i++){
             recommendedItems.add(recommendedBuscadas.get(i));
         }
