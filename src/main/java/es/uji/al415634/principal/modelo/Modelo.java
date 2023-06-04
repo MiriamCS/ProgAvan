@@ -1,8 +1,10 @@
 package es.uji.al415634.principal.modelo;
 
 import es.uji.al415634.principal.Grafica;
+import es.uji.al415634.principal.Observado;
 import es.uji.al415634.principal.modelo.canciones.SongRecSys;
 import es.uji.al415634.principal.modelo.distancia.Distance;
+import es.uji.al415634.principal.vista.MainFX;
 import javafx.collections.ObservableList;
 
 import java.io.BufferedReader;
@@ -19,6 +21,7 @@ public class Modelo implements Grafica {
     private List<String> recommendedItems;
     private int numBuscadas=0;
     private List<String> recommendedBuscadas;
+    private MainFX mainFX;
 
     @Override
     public void setAlgoritmo(String alg) {this.algoritmo = alg;}
@@ -34,6 +37,10 @@ public class Modelo implements Grafica {
         buscarCancion();
     }
     @Override
+    public void setMainFx(MainFX mainFX){
+        this.mainFX=mainFX;
+    }
+    @Override
     public String getAlgoritmo() {return algoritmo;}
     @Override
     public Distance getDistancia() {return distancia;}
@@ -47,17 +54,24 @@ public class Modelo implements Grafica {
     public List<String> getRecommendedItems(){
         return recommendedItems;
     }
+
     public void buscarCancion() throws Exception {
         SongRecSys songRecSys;
+        songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones+10);
+        songRecSys.suscribirObservador(mainFX);
         if (numRecomendaciones > numBuscadas) {
-            songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones+10);
+            System.out.println(mainFX);
+            System.out.println("Adios");
             recommendedBuscadas = songRecSys.getReportRecommendation();
+
         }
         recommendedItems = new ArrayList<>();
         for (int i= 0; i<numRecomendaciones; i++){
             recommendedItems.add(recommendedBuscadas.get(i));
         }
         numBuscadas= numRecomendaciones +10;
+        songRecSys.notificarObservadores();
+
     }
     @Override
     public ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException {

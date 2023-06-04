@@ -1,5 +1,6 @@
 package es.uji.al415634.principal.vista;
 
+import es.uji.al415634.principal.Observador;
 import es.uji.al415634.principal.controlador.Controlador;
 import es.uji.al415634.principal.modelo.distancia.EuclideanDistance;
 import es.uji.al415634.principal.modelo.distancia.ManhattanDistance;
@@ -19,7 +20,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.List;
 
-public class MainFX extends Application {
+public class MainFX extends Application implements Observador {
     private final Stage secondaryStage = new Stage();
     //Modificado
     private Stage primaryStage;
@@ -35,6 +36,7 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        controlador.setMainFx(this);
         this.primaryStage=primaryStage;
         //primera ventana emergente
         primaryStage.setTitle("Song Recommender");
@@ -173,8 +175,8 @@ public class MainFX extends Application {
                 } catch (Exception excepcion) {
                     excepcion.printStackTrace();
                 }
-                List<String> lista = controlador.getRecommendedItems();
-                actualizarDatos(lista);
+                //List<String> lista = controlador.getRecommendedItems();
+                //actualizarDatos(lista);
             }
         });
         VBox caja4 = new VBox(recommend);
@@ -197,8 +199,8 @@ public class MainFX extends Application {
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
-            List<String> lista = controlador.getRecommendedItems();
-            actualizarDatos(lista);
+            //List<String> lista = controlador.getRecommendedItems();
+            //actualizarDatos(lista);
             if(estado) { //pide más recomendaciones de las que hay
                 SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, valueMax, valueMax);
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
@@ -234,6 +236,12 @@ public class MainFX extends Application {
         caja3.setSpacing(10);
         caja3.setPadding(new Insets(10));
         return caja3;
+    }
+
+    public void notificar(){
+        List<String> lista = controlador.getRecommendedItems();
+        System.out.println("Size:" + lista.size());
+        actualizarDatos(lista);
     }
 
     private void actualizarDatos(List<String> lista){

@@ -4,6 +4,7 @@ package es.uji.al415634.principal.controlador;
 import es.uji.al415634.principal.Grafica;
 import es.uji.al415634.principal.modelo.Modelo;
 import es.uji.al415634.principal.modelo.distancia.Distance;
+import es.uji.al415634.principal.vista.MainFX;
 import javafx.collections.ObservableList;
 import java.io.IOException;
 import java.util.List;
@@ -23,6 +24,10 @@ public class Controlador implements Grafica {
     @Override
     public void setCancion(String cancion) {
         modelo.setCancion(cancion);
+    }
+    @Override
+    public void setMainFx(MainFX mainFX){
+        modelo.setMainFx(mainFX);
     }
     @Override
     public String getAlgoritmo() {return modelo.getAlgoritmo();}
