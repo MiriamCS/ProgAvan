@@ -1,6 +1,5 @@
 package es.uji.al415634.principal.modelo.canciones;
 
-import es.uji.al415634.principal.Observado;
 import es.uji.al415634.principal.modelo.algoritmos.Algorithm;
 import es.uji.al415634.principal.modelo.algoritmos.KMeans;
 import es.uji.al415634.principal.modelo.algoritmos.KNN;
@@ -16,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SongRecSys extends Observado{
+public class SongRecSys {
     private RecSys recsys;
     private List<String> recommended_items;
 
