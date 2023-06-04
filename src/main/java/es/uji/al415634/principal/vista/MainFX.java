@@ -34,7 +34,7 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        controlador.setMainFx(this);
+        modelo.setMainFx(this);
         this.primaryStage=primaryStage;
         //primera ventana emergente
         primaryStage.setTitle("Song Recommender");
@@ -99,9 +99,9 @@ public class MainFX extends Application {
         ToggleGroup grupo1 = new ToggleGroup();
         Label titulo1 = new Label("Recommendation Type");
         RadioButton knn = new RadioButton("Recommended based on song features");
-        knn.setOnAction(e -> controlador.setAlgoritmo("knn"));
+        knn.setOnAction(e -> modelo.setAlgoritmo("knn"));
         RadioButton kmeans = new RadioButton("Recommend based on guessed genre");
-        kmeans.setOnAction(e -> controlador.setAlgoritmo("kmeans"));
+        kmeans.setOnAction(e -> modelo.setAlgoritmo("kmeans"));
         VBox caja1 = new VBox(titulo1, knn, kmeans);
         //Ajustes de la caja1
         caja1.setSpacing(10);
@@ -117,9 +117,9 @@ public class MainFX extends Application {
         ToggleGroup grupo2 = new ToggleGroup();
         Label titulo2 = new Label("Distance Type");
         RadioButton eucl = new RadioButton("Euclidean");
-        eucl.setOnAction(e ->controlador.setDistancia(new EuclideanDistance()));
+        eucl.setOnAction(e -> modelo.setDistancia(new EuclideanDistance()));
         RadioButton manh = new RadioButton("Manhattan");
-        manh.setOnAction(e -> controlador.setDistancia(new ManhattanDistance()));
+        manh.setOnAction(e -> modelo.setDistancia(new ManhattanDistance()));
         VBox caja2 = new VBox(titulo2, eucl, manh);
         //Ajustes de la caja2
         caja2.setSpacing(10);
@@ -135,10 +135,10 @@ public class MainFX extends Application {
         Label titulo3 = new Label("Song Titles");
         ObservableList<String> canciones = FXCollections.observableArrayList();
         //Añadir titulos de canciones
-        controlador.getTitleSong(canciones);
+        modelo.getTitleSong(canciones);
         //Poner el scrollPanel
         ListView<String> lista = new ListView<>(canciones);
-        lista.getSelectionModel().selectedItemProperty().addListener((item, valorInicial, valorActual) -> controlador.setCancion(valorActual));
+        lista.getSelectionModel().selectedItemProperty().addListener((item, valorInicial, valorActual) -> modelo.setCancion(valorActual));
         VBox caja3 = new VBox(titulo3, lista);
         //Ajustes de la caja3
         caja3.setSpacing(10);
@@ -149,12 +149,12 @@ public class MainFX extends Application {
     public VBox botonRecommend(Stage primaryStage){
         Button recommend = new Button("Recommend...");
         recommend.setOnAction(e ->{
-            if( controlador.getAlgoritmo() == null || controlador.getDistancia() == null || controlador.getCancion() == null){
+            if( modelo.getAlgoritmo() == null || modelo.getDistancia() == null || modelo.getCancion() == null){
                 String faltaSeleccionar;
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                if(controlador.getAlgoritmo()==null){
+                if(modelo.getAlgoritmo()==null){
                     faltaSeleccionar="RECOMMENDATION TYPE";
-                }else if(controlador.getDistancia()==null){
+                }else if(modelo.getDistancia()==null){
                     faltaSeleccionar="DISTANCE TYPE";
                 }else{
                     faltaSeleccionar="SONG TITLE";
@@ -168,11 +168,11 @@ public class MainFX extends Application {
                 secondaryStage.show();
                 primaryStage.close();
                 try {
-                    controlador.setNumRecomendaciones(5); //incluye la llamada a buscarCancion
+                    modelo.setNumRecomendaciones(5); //incluye la llamada a buscarCancion
                 } catch (Exception excepcion) {
                     excepcion.printStackTrace();
                 }
-                controlador.getRecommendedItems();
+                modelo.getRecommendedItems();
             }
         });
         VBox caja4 = new VBox(recommend);
@@ -189,11 +189,11 @@ public class MainFX extends Application {
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
             try {
-                controlador.setNumRecomendaciones(valorActual);//incluye la llamada a buscarCancion
+                modelo.setNumRecomendaciones(valorActual);//incluye la llamada a buscarCancion
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
-            controlador.getRecommendedItems();
+            modelo.getRecommendedItems();
             if(modelo.getEstado()) { //pide más recomendaciones de las que hay
                 SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, modelo.getValueMax(), modelo.getValueMax());
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
@@ -207,8 +207,8 @@ public class MainFX extends Application {
     }
 
     public VBox recomendaciones(){
-        siTeGusta = new Label("If you like '"+controlador.getCancion()+"' you might like");
-        ListView<String> lista = new ListView<>(controlador.getCancionesRecomendadas());
+        siTeGusta = new Label("If you like '"+ modelo.getCancion()+"' you might like");
+        ListView<String> lista = new ListView<>(modelo.getCancionesRecomendadas());
         VBox caja2 = new VBox(siTeGusta,lista);
         //Ajustes de la caja2
         caja2.setSpacing(10);
@@ -232,10 +232,10 @@ public class MainFX extends Application {
 
     public void notificar(List <String> lista) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        String mensaje = "No hay "+ controlador.getNumRecomendaciones() +" recomendaciones, solo hay "+ lista.size() +" recomendaciones disponibles";
+        String mensaje = "No hay "+ modelo.getNumRecomendaciones() +" recomendaciones, solo hay "+ lista.size() +" recomendaciones disponibles";
         startAlert(alert, mensaje);
         try{
-            controlador.setNumRecomendaciones(lista.size());//incluye la llamada a buscarCancion
+            modelo.setNumRecomendaciones(lista.size());//incluye la llamada a buscarCancion
         } catch (Exception excepcion) {
             excepcion.printStackTrace();
         }
