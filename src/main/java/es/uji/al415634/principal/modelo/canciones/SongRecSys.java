@@ -49,8 +49,6 @@ public class SongRecSys {
         // Names of items
         List<String> names = readNames(ruta+sep+"songs_test_names.csv");
 
-        //Esto solo debería ejecutarse una vez
-
         this.recsys = new RecSys(algorithms.get(method));
         this.recsys.train(tables.get(method+"train"));
         this.recsys.run(tables.get(method+"test"), names);

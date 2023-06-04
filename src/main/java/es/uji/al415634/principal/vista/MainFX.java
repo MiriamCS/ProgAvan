@@ -22,7 +22,6 @@ import java.util.List;
 
 public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
-    //Modificado
     private Stage primaryStage;
     private final Controlador controlador = new Controlador();
     private final Modelo modelo= controlador.getModelo();
@@ -220,7 +219,6 @@ public class MainFX extends Application {
         Button close = new Button("Close");
         close.setOnAction(e ->{
             secondaryStage.close();
-            //Modificado
             primaryStage.show();
         });
         VBox caja3 = new VBox(close);
