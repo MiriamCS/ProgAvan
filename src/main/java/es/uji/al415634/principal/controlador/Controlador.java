@@ -54,7 +54,7 @@ public class Controlador implements Grafica {
     public List<String> getRecommendedItems(){
         return modelo.getRecommendedItems();
     }
-
+    @Override
     public ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException {
         return modelo.getTitleSong(lista);
     }
