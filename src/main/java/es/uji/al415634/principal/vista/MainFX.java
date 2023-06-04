@@ -1,6 +1,7 @@
 package es.uji.al415634.principal.vista;
 
 import es.uji.al415634.principal.controlador.Controlador;
+import es.uji.al415634.principal.modelo.Modelo;
 import es.uji.al415634.principal.modelo.distancia.EuclideanDistance;
 import es.uji.al415634.principal.modelo.distancia.ManhattanDistance;
 import javafx.application.Application;
@@ -24,6 +25,7 @@ public class MainFX extends Application {
     //Modificado
     private Stage primaryStage;
     private final Controlador controlador = new Controlador();
+    private final Modelo modelo= controlador.getModelo();
     private Label siTeGusta;
 
     public static void main(String[] args) {
@@ -183,7 +185,7 @@ public class MainFX extends Application {
 
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
-        Spinner<Integer> spinner = new Spinner<>(1,controlador.getValueMax(),5, 1);
+        Spinner<Integer> spinner = new Spinner<>(1,modelo.getValueMax(),5, 1);
         spinner.setRepeatDelay(Duration.INDEFINITE);
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
@@ -195,8 +197,8 @@ public class MainFX extends Application {
                 excepcion.printStackTrace();
             }
             controlador.getRecommendedItems();
-            if(controlador.getEstado()) { //pide más recomendaciones de las que hay
-                SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, controlador.getValueMax(), controlador.getValueMax());
+            if(modelo.getEstado()) { //pide más recomendaciones de las que hay
+                SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, modelo.getValueMax(), modelo.getValueMax());
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
             }
         });
@@ -232,7 +234,7 @@ public class MainFX extends Application {
         return caja3;
     }
 
-    public void notificar(List<String> lista){
+    public void notificar(List <String> lista) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         String mensaje = "No hay "+ controlador.getNumRecomendaciones() +" recomendaciones, solo hay "+ lista.size() +" recomendaciones disponibles";
         startAlert(alert, mensaje);

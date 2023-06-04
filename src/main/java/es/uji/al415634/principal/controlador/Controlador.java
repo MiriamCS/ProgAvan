@@ -12,6 +12,11 @@ import java.util.List;
 public class Controlador implements Grafica {
 
     private final Modelo modelo = new Modelo();
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
     public ObservableList<String> getCancionesRecomendadas(){return modelo.getCancionesRecomendadas();}
     @Override
     public void setAlgoritmo(String alg) {
