@@ -168,8 +168,7 @@ public class MainFX extends Application {
                 secondaryStage.show();
                 primaryStage.close();
                 try {
-                    //controlador.buscarCancion();
-                    controlador.setNumRecomendaciones(5);
+                    controlador.setNumRecomendaciones(5); //incluye la llamada a buscarCancion
                 } catch (Exception excepcion) {
                     excepcion.printStackTrace();
                 }
@@ -189,10 +188,8 @@ public class MainFX extends Application {
         spinner.setRepeatDelay(Duration.INDEFINITE);
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
-            //controlador.setNumRecomendaciones(valorActual);
             try {
-                //controlador.buscarCancion();
-                controlador.setNumRecomendaciones(valorActual);
+                controlador.setNumRecomendaciones(valorActual);//incluye la llamada a buscarCancion
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
@@ -221,7 +218,6 @@ public class MainFX extends Application {
 
     public VBox botonClose(){
         Button close = new Button("Close");
-        //close.setOnAction(e ->secondaryStage.close());
         close.setOnAction(e ->{
             secondaryStage.close();
             //Modificado
@@ -239,7 +235,7 @@ public class MainFX extends Application {
         String mensaje = "No hay "+ controlador.getNumRecomendaciones() +" recomendaciones, solo hay "+ lista.size() +" recomendaciones disponibles";
         startAlert(alert, mensaje);
         try{
-            controlador.setNumRecomendaciones(lista.size());
+            controlador.setNumRecomendaciones(lista.size());//incluye la llamada a buscarCancion
         } catch (Exception excepcion) {
             excepcion.printStackTrace();
         }

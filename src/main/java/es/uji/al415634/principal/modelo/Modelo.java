@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Modelo implements Grafica {
@@ -18,6 +19,8 @@ public class Modelo implements Grafica {
     private String cancion;
     private int numRecomendaciones;
     private List<String> recommendedItems;
+    private int numBuscadas=0;
+    private List<String> recommendedBuscadas;
     private MainFX mainFX;
     private boolean estado=false;
     private int valueMax=100;
@@ -59,8 +62,19 @@ public class Modelo implements Grafica {
         return recommendedItems;
     }
     public void buscarCancion() throws Exception {
-        SongRecSys songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones);
-        recommendedItems = songRecSys.getReportRecommendation();
+        //Busca 10 de más, pero solo muestra las pedidas, así tiene un margen en el que el cliente
+        //puede aumentar 10 más sin que tenga que volver a calcularlas, cuando se pasa de ese margen vuelve a
+        // calcular 10 de más del número pedido, para volver a tener ese margen
+        SongRecSys songRecSys;
+        if (numRecomendaciones > numBuscadas) {
+            songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones+10);
+            recommendedBuscadas = songRecSys.getReportRecommendation();
+        }
+        recommendedItems = new ArrayList<>();
+        for (int i= 0; i<numRecomendaciones; i++){
+            recommendedItems.add(recommendedBuscadas.get(i));
+        }
+        numBuscadas= numRecomendaciones +10;
     }
     @Override
     public ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException {

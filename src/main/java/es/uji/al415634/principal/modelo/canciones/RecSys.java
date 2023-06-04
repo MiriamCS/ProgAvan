@@ -60,7 +60,6 @@ public class RecSys{
         //Para el paso 3a de recommend()
         List<Integer> listaIndRec = new ArrayList<>();
         List<Integer> estimaciones = etiquetaEstimada.get(labelLikedItem);
-
         //El for será numRec a no ser que hayan menos elementos que numRec, si hay menos serán el número de elementos
         for (int i = 0; i<numRec; i++){
             try{
