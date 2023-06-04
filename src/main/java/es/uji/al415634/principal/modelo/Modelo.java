@@ -1,17 +1,15 @@
 package es.uji.al415634.principal.modelo;
 
 import es.uji.al415634.principal.Grafica;
-import es.uji.al415634.principal.Observado;
 import es.uji.al415634.principal.modelo.canciones.SongRecSys;
 import es.uji.al415634.principal.modelo.distancia.Distance;
+import javafx.collections.FXCollections;
 import es.uji.al415634.principal.vista.MainFX;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Modelo implements Grafica {
@@ -20,15 +18,13 @@ public class Modelo implements Grafica {
     private String cancion;
     private int numRecomendaciones;
     private List<String> recommendedItems;
-    private int numBuscadas=0;
-    private List<String> recommendedBuscadas;
     private MainFX mainFX;
-    private SongRecSys songRecSys;
     private boolean estado=false;
     private int valueMax=100;
 
-    public boolean getEstado(){return estado;}
-    public int getValueMax(){return valueMax;}
+    private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
+
+    public ObservableList<String> getCancionesRecomendadas(){return cancionesRecomendadas;}
 
     @Override
     public void setAlgoritmo(String alg) {this.algoritmo = alg;}
@@ -59,40 +55,13 @@ public class Modelo implements Grafica {
     }
     @Override
     public List<String> getRecommendedItems(){
+        actualizarDatos(recommendedItems);
         return recommendedItems;
     }
-
     public void buscarCancion() throws Exception {
-        songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones+10);
-        songRecSys.suscribirObservador(mainFX);
-        if (numRecomendaciones > numBuscadas) {
-            System.out.println(mainFX);
-            System.out.println("Adios");
-            recommendedBuscadas = songRecSys.getReportRecommendation();
-        }
-
-        recommendedItems = new ArrayList<>();
-        for (int i= 0; i<numRecomendaciones; i++){
-            System.out.println(i);
-            recommendedItems.add(recommendedBuscadas.get(i));
-        }
-        numBuscadas= numRecomendaciones +10;
-        actualizarDatos(recommendedItems);
+        SongRecSys songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones);
+        recommendedItems = songRecSys.getReportRecommendation();
     }
-
-    private void actualizarDatos(List<String> lista){
-        //Si el número de elementos es menor que numRec...
-        if(lista.size() < numRecomendaciones){
-            estado=true;
-            valueMax=lista.size();
-            songRecSys.notificarObservadores();
-        }else{
-            estado=false;
-            valueMax=100;
-        }
-    }
-
-
     @Override
     public ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException {
         String sep = System.getProperty("file.separator");
@@ -103,5 +72,29 @@ public class Modelo implements Grafica {
             lista.add(cadena);
         }
         return lista;
+    }
+
+    @Override
+    public boolean getEstado() {
+        return estado;
+    }
+
+    @Override
+    public int getValueMax() {
+        return valueMax;
+    }
+
+    private void actualizarDatos(List<String> lista){
+        cancionesRecomendadas.clear();
+        cancionesRecomendadas.addAll(lista);
+        //Si el número de elementos es menor que numRec...
+        if(lista.size() < numRecomendaciones){
+            estado=true;
+            valueMax=lista.size();
+            mainFX.notificar(lista);
+        }else{
+            estado=false;
+            valueMax=100;
+        }
     }
 }

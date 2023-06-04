@@ -12,11 +12,7 @@ import java.util.List;
 public class Controlador implements Grafica {
 
     private final Modelo modelo = new Modelo();
-
-    public Modelo getModelo(){
-        return modelo;
-    }
-
+    public ObservableList<String> getCancionesRecomendadas(){return modelo.getCancionesRecomendadas();}
     @Override
     public void setAlgoritmo(String alg) {
         modelo.setAlgoritmo(alg);
@@ -56,5 +52,15 @@ public class Controlador implements Grafica {
 
     public ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException {
         return modelo.getTitleSong(lista);
+    }
+
+    @Override
+    public boolean getEstado() {
+        return modelo.getEstado();
+    }
+
+    @Override
+    public int getValueMax() {
+        return modelo.getValueMax();
     }
 }

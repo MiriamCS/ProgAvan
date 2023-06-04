@@ -11,7 +11,7 @@ public interface Grafica {
     void setAlgoritmo(String alg);
     void setDistancia(Distance distancia);
     void setCancion(String texto);
-    void setMainFx(MainFX mianFx);
+    void setMainFx(MainFX mainFx);
     String getAlgoritmo();
     Distance getDistancia();
     String getCancion();
@@ -19,4 +19,6 @@ public interface Grafica {
     void setNumRecomendaciones(int num) throws Exception;
     List<String> getRecommendedItems();
     ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException;
+    boolean getEstado();
+    int getValueMax();
 }

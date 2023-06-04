@@ -1,8 +1,6 @@
 package es.uji.al415634.principal.vista;
 
-import es.uji.al415634.principal.Observador;
 import es.uji.al415634.principal.controlador.Controlador;
-import es.uji.al415634.principal.modelo.Modelo;
 import es.uji.al415634.principal.modelo.distancia.EuclideanDistance;
 import es.uji.al415634.principal.modelo.distancia.ManhattanDistance;
 import javafx.application.Application;
@@ -21,13 +19,11 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.List;
 
-public class MainFX extends Application implements Observador {
+public class MainFX extends Application {
     private final Stage secondaryStage = new Stage();
     //Modificado
     private Stage primaryStage;
     private final Controlador controlador = new Controlador();
-    private final Modelo modelo= controlador.getModelo();
-    private final ObservableList<String> cancionesRecomendadas = FXCollections.observableArrayList();
     private Label siTeGusta;
 
     public static void main(String[] args) {
@@ -175,8 +171,7 @@ public class MainFX extends Application implements Observador {
                 } catch (Exception excepcion) {
                     excepcion.printStackTrace();
                 }
-                //List<String> lista = controlador.getRecommendedItems();
-                //actualizarDatos(lista);
+                controlador.getRecommendedItems();
             }
         });
         VBox caja4 = new VBox(recommend);
@@ -188,7 +183,7 @@ public class MainFX extends Application implements Observador {
 
     public HBox cantRecomendaciones(){
         Label titulo1 = new Label("Number of recommendation:");
-        Spinner<Integer> spinner = new Spinner<>(1,modelo.getValueMax(),5, 1);
+        Spinner<Integer> spinner = new Spinner<>(1,controlador.getValueMax(),5, 1);
         spinner.setRepeatDelay(Duration.INDEFINITE);
         spinner.setEditable(true);
         spinner.valueProperty().addListener((item, valorInicial, valorActual) ->{
@@ -199,10 +194,9 @@ public class MainFX extends Application implements Observador {
             } catch (Exception excepcion) {
                 excepcion.printStackTrace();
             }
-            //List<String> lista = controlador.getRecommendedItems();
-            //actualizarDatos(lista);
-            if(modelo.getEstado()) { //pide más recomendaciones de las que hay
-                SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, modelo.getValueMax(), modelo.getValueMax());
+            controlador.getRecommendedItems();
+            if(controlador.getEstado()) { //pide más recomendaciones de las que hay
+                SpinnerValueFactory<Integer> valoresNuevos = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, controlador.getValueMax(), controlador.getValueMax());
                 spinner.valueFactoryProperty().setValue(valoresNuevos);
             }
         });
@@ -215,7 +209,7 @@ public class MainFX extends Application implements Observador {
 
     public VBox recomendaciones(){
         siTeGusta = new Label("If you like '"+controlador.getCancion()+"' you might like");
-        ListView<String> lista = new ListView<>(cancionesRecomendadas);
+        ListView<String> lista = new ListView<>(controlador.getCancionesRecomendadas());
         VBox caja2 = new VBox(siTeGusta,lista);
         //Ajustes de la caja2
         caja2.setSpacing(10);
@@ -238,13 +232,12 @@ public class MainFX extends Application implements Observador {
         return caja3;
     }
 
-    @Override
-    public void notificar() {
+    public void notificar(List<String> lista){
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        String mensaje = "No hay "+ controlador.getNumRecomendaciones() +" recomendaciones, solo hay "+ modelo.getRecommendedItems().size() +" recomendaciones disponibles";
+        String mensaje = "No hay "+ controlador.getNumRecomendaciones() +" recomendaciones, solo hay "+ lista.size() +" recomendaciones disponibles";
         startAlert(alert, mensaje);
         try{
-            controlador.setNumRecomendaciones(modelo.getRecommendedItems().size());
+            controlador.setNumRecomendaciones(lista.size());
         } catch (Exception excepcion) {
             excepcion.printStackTrace();
         }
