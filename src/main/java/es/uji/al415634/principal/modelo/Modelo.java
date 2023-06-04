@@ -71,7 +71,12 @@ public class Modelo implements Grafica {
             recommendedBuscadas = songRecSys.getReportRecommendation();
         }
         recommendedItems = new ArrayList<>();
-        for (int i= 0; i<numRecomendaciones; i++){
+        //Gestionar el Index Out Of Bound
+        int limite=numRecomendaciones;
+        if(numRecomendaciones>recommendedBuscadas.size()){
+            limite=recommendedBuscadas.size();
+        }
+        for (int i= 0; i<limite; i++){
             recommendedItems.add(recommendedBuscadas.get(i));
         }
         numBuscadas= numRecomendaciones +10;
