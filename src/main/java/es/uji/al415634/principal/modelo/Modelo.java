@@ -6,6 +6,7 @@ import es.uji.al415634.principal.modelo.canciones.SongRecSys;
 import es.uji.al415634.principal.modelo.distancia.Distance;
 import es.uji.al415634.principal.vista.MainFX;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -22,6 +23,12 @@ public class Modelo implements Grafica {
     private int numBuscadas=0;
     private List<String> recommendedBuscadas;
     private MainFX mainFX;
+    private SongRecSys songRecSys;
+    private boolean estado=false;
+    private int valueMax=100;
+
+    public boolean getEstado(){return estado;}
+    public int getValueMax(){return valueMax;}
 
     @Override
     public void setAlgoritmo(String alg) {this.algoritmo = alg;}
@@ -56,23 +63,36 @@ public class Modelo implements Grafica {
     }
 
     public void buscarCancion() throws Exception {
-        SongRecSys songRecSys;
         songRecSys = new SongRecSys(algoritmo, distancia, cancion, numRecomendaciones+10);
         songRecSys.suscribirObservador(mainFX);
         if (numRecomendaciones > numBuscadas) {
             System.out.println(mainFX);
             System.out.println("Adios");
             recommendedBuscadas = songRecSys.getReportRecommendation();
-
         }
+
         recommendedItems = new ArrayList<>();
         for (int i= 0; i<numRecomendaciones; i++){
+            System.out.println(i);
             recommendedItems.add(recommendedBuscadas.get(i));
         }
         numBuscadas= numRecomendaciones +10;
-        songRecSys.notificarObservadores();
-
+        actualizarDatos(recommendedItems);
     }
+
+    private void actualizarDatos(List<String> lista){
+        //Si el número de elementos es menor que numRec...
+        if(lista.size() < numRecomendaciones){
+            estado=true;
+            valueMax=lista.size();
+            songRecSys.notificarObservadores();
+        }else{
+            estado=false;
+            valueMax=100;
+        }
+    }
+
+
     @Override
     public ObservableList<String> getTitleSong(ObservableList<String> lista) throws IOException {
         String sep = System.getProperty("file.separator");

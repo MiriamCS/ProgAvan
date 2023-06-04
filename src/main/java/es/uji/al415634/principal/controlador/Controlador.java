@@ -13,6 +13,10 @@ public class Controlador implements Grafica {
 
     private final Modelo modelo = new Modelo();
 
+    public Modelo getModelo(){
+        return modelo;
+    }
+
     @Override
     public void setAlgoritmo(String alg) {
         modelo.setAlgoritmo(alg);
